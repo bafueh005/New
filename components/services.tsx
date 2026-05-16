@@ -2,43 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  Briefcase,
-  Cloud,
-  ShieldCheck,
-  GitBranch,
-  Server,
-  Boxes,
-  Network,
-  Terminal,
-  Container,
-  Globe,
-  FileText,
-  Linkedin,
-  Mic,
-  Target,
-  Compass,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, type LucideIcon } from "lucide-react";
 import { SectionHeading } from "./section-heading";
+import { SERVICES } from "@/lib/services-data";
 
-export const SERVICES = [
-  { icon: Briefcase, title: "IT Consulting Services", desc: "Architecture reviews, hiring strategy, and infrastructure roadmaps for engineering teams.", tag: "Consulting" },
-  { icon: Cloud, title: "Cloud Engineering Mentorship", desc: "1:1 mentorship on AWS & Azure architecture, cost optimization, and production reliability.", tag: "Cloud" },
-  { icon: ShieldCheck, title: "Cybersecurity Career Coaching", desc: "Career strategy for SOC, GRC, AppSec, and Red Team roles — with certification roadmaps.", tag: "Security" },
-  { icon: GitBranch, title: "DevOps Coaching", desc: "CI/CD pipelines, IaC, GitOps, and SRE practices taught with real production scenarios.", tag: "DevOps" },
-  { icon: Server, title: "Systems Administration Training", desc: "Master Linux, Windows Server, Active Directory, patching, and hardening in real labs.", tag: "SysAdmin" },
-  { icon: Boxes, title: "VMware Engineering Mentorship", desc: "vSphere, vSAN, NSX-T, vRealize — from datacenter ops to enterprise migration projects.", tag: "Virtualization" },
-  { icon: Network, title: "Network Engineering Coaching", desc: "Routing, switching, firewalls, SD-WAN. Cisco, Palo Alto, Fortinet — interview-ready.", tag: "Networking" },
-  { icon: Terminal, title: "Linux & Windows Server Mentorship", desc: "Shell scripting, automation, AD, GPOs, Bash, PowerShell — practical, not theoretical.", tag: "Platforms" },
-  { icon: Container, title: "OpenShift & Kubernetes Coaching", desc: "Cluster ops, Helm, Argo CD, operators, and platform engineering best practices.", tag: "Containers" },
-  { icon: Globe, title: "Azure & AWS Training", desc: "Hands-on labs aligned to architect / engineer certifications and real production work.", tag: "Cloud" },
-  { icon: FileText, title: "Resume Optimization", desc: "ATS-aware, recruiter-tested resumes that highlight outcomes and engineering judgment.", tag: "Resume" },
-  { icon: Linkedin, title: "LinkedIn Branding", desc: "Profile rewrites, headline strategy, content guidance — turn LinkedIn into a pipeline.", tag: "Brand" },
-  { icon: Mic, title: "Technical Mock Interviews", desc: "Live mock interviews with senior engineers — system design, troubleshooting, behavioral.", tag: "Interviews" },
-  { icon: Target, title: "Job Application Strategy", desc: "Where to apply, how to apply, who to talk to, and the order to do it in.", tag: "Strategy" },
-  { icon: Compass, title: "Career Transition Programs", desc: "End-to-end programs for switching from support to engineering, or cloud to platform.", tag: "Transformation" },
-] as const;
+export { SERVICES, getServiceBySlug, type Service } from "@/lib/services-data";
 
 export function Services() {
   return (
@@ -53,13 +21,19 @@ export function Services() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
             <motion.div
-              key={s.title}
+              key={s.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.45, delay: (i % 6) * 0.04 }}
             >
-              <ServiceCard {...s} href={`/contact?service=${slugify(s.title)}`} />
+              <ServiceCard
+                icon={s.icon}
+                title={s.title}
+                desc={s.desc}
+                tag={s.tag}
+                href={`/services/${s.slug}`}
+              />
             </motion.div>
           ))}
         </div>
@@ -82,10 +56,6 @@ export function Services() {
   );
 }
 
-function slugify(s: string) {
-  return s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-
 function ServiceCard({
   icon: Icon,
   title,
@@ -93,7 +63,7 @@ function ServiceCard({
   tag,
   href,
 }: {
-  icon: React.ComponentType<{ className?: string }>;
+  icon: LucideIcon;
   title: string;
   desc: string;
   tag: string;
@@ -102,7 +72,7 @@ function ServiceCard({
   return (
     <Link
       href={href}
-      aria-label={`Get started with ${title}`}
+      aria-label={`Learn more about ${title}`}
       className="group relative block h-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-cyan-400/40 hover:shadow-xl hover:shadow-cyan-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-400/40"
     >
       <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-400/0 blur-2xl transition-all group-hover:bg-cyan-400/20" />
