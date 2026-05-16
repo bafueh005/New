@@ -59,7 +59,7 @@ export function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.45, delay: (i % 6) * 0.04 }}
             >
-              <ServiceCard {...s} />
+              <ServiceCard {...s} href={`/contact?service=${slugify(s.title)}`} />
             </motion.div>
           ))}
         </div>
@@ -82,19 +82,29 @@ export function Services() {
   );
 }
 
+function slugify(s: string) {
+  return s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function ServiceCard({
   icon: Icon,
   title,
   desc,
   tag,
+  href,
 }: {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   desc: string;
   tag: string;
+  href: string;
 }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-cyan-400/40 hover:shadow-xl hover:shadow-cyan-500/5 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-400/40">
+    <Link
+      href={href}
+      aria-label={`Get started with ${title}`}
+      className="group relative block h-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-cyan-400/40 hover:shadow-xl hover:shadow-cyan-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-400/40"
+    >
       <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-400/0 blur-2xl transition-all group-hover:bg-cyan-400/20" />
       <div className="flex items-center justify-between">
         <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-navy-900 to-cyan-600 text-white shadow-md shadow-cyan-500/20">
@@ -106,9 +116,9 @@ function ServiceCard({
       </div>
       <h3 className="mt-5 h-card text-navy-950 dark:text-white">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{desc}</p>
-      <div className="mt-5 flex items-center gap-1.5 text-xs font-medium text-cyan-600 dark:text-cyan-300 opacity-0 transition-opacity group-hover:opacity-100">
-        Learn more <ArrowRight className="h-3.5 w-3.5" />
+      <div className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium text-cyan-600 transition-transform group-hover:translate-x-0.5 dark:text-cyan-300">
+        Get started <ArrowRight className="h-3.5 w-3.5" />
       </div>
-    </div>
+    </Link>
   );
 }
