@@ -129,7 +129,7 @@ export function Footer() {
             <Link href="/legal/privacy" className="link-muted">Privacy Policy</Link>
             <Link href="/legal/terms" className="link-muted">Terms of Service</Link>
             <Link href="/contact" className="link-muted">Support</Link>
-            <a href="mailto:hello@boasystemz.com" className="link-muted">hello@boasystemz.com</a>
+            <a href="mailto:info@boasystemz.com" className="link-muted">info@boasystemz.com</a>
           </div>
         </div>
       </div>

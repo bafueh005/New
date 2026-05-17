@@ -43,8 +43,8 @@ export default function ContactPage() {
         <div className="container-px mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-5">
             <InfoCard icon={CalendarCheck2} title="Schedule a free call" body={<>30 minutes, video on, no sales pitch. We&apos;ll diagnose what&apos;s blocking your interviews and tell you what we&apos;d do next — even if it isn&apos;t with us.</>} />
-            <InfoCard icon={Mail} title="Email us" body={<a href="mailto:hello@boasystemz.com" className="font-semibold text-navy-900 underline-offset-4 hover:underline dark:text-white">hello@boasystemz.com</a>} />
-            <InfoCard icon={Phone} title="Call or text" body="+1 (415) 555-0179 · Mon–Fri 9am–6pm PT" />
+            <InfoCard icon={Mail} title="Email us" body={<a href="mailto:info@boasystemz.com" className="font-semibold text-navy-900 underline-offset-4 hover:underline dark:text-white">info@boasystemz.com</a>} />
+            <InfoCard icon={Phone} title="Call or text" body="+1 (240) 784-3133 · Mon–Fri 9am–6pm PT" />
             <InfoCard icon={MapPin} title="Remote-first" body="Headquartered in California. Mentors operate across US, EMEA, and APAC." />
 
             <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]">
