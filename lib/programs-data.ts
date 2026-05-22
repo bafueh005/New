@@ -5,6 +5,7 @@ import {
   Rocket,
   Boxes,
   Mic,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -46,17 +47,135 @@ export type Program = {
 
 export const PROGRAMS: readonly Program[] = [
   {
+    slug: "ai-assisted-cloud-engineer",
+    icon: Sparkles,
+    title: "AI-Assisted Cloud Engineer",
+    tag: "Flagship",
+    desc: "Our signature 12-week cohort on using AI tools to do cloud and DevOps work faster — and to land the role.",
+    tagline:
+      "A 12-week, mentor-led cohort that teaches you to engineer cloud infrastructure with AI as your copilot — writing IaC, debugging incidents, and running your job search with tools like Claude, Copilot, and Cursor, while knowing exactly when to trust them and when to verify.",
+    format: "Cohort",
+    level: "Intermediate",
+    duration: "12 weeks",
+    featured: true,
+    outcomes: [
+      "Ship cloud infrastructure faster using AI pair-programming — without shipping what you don't understand",
+      "Use AI to write, review, and refactor Terraform, pipelines, and runbooks",
+      "Cut incident time with AI-assisted log analysis and troubleshooting",
+      "Build a small AI-powered automation or agent for real ops work",
+      "Run an AI-accelerated job search and interview prep that still sounds like you",
+    ],
+    includes: [
+      "Weekly live sessions with a senior engineer who ships with AI daily",
+      "Hands-on labs using Claude, Copilot, and Cursor on real cloud accounts",
+      "A capstone AI-powered automation project reviewed line-by-line",
+      "Prompt libraries and review checklists you keep and reuse",
+      "AI-assisted resume, LinkedIn, and mock-interview support",
+      "Lifetime access to recordings, prompts, and lab guides",
+    ],
+    curriculum: [
+      {
+        title: "The AI-Assisted Engineer Mindset",
+        lessons: 10,
+        summary: "Learn to work with AI as a force multiplier — and where it will quietly mislead you.",
+        topics: [
+          "How modern coding assistants actually work (and fail)",
+          "Prompting for engineering: context, constraints, iteration",
+          "When to trust AI output vs. verify it line-by-line",
+          "Setting up Claude, Copilot, and Cursor in your workflow",
+        ],
+      },
+      {
+        title: "AI-Accelerated Infrastructure",
+        lessons: 14,
+        summary: "Write and review real infrastructure as code with AI in the loop.",
+        topics: [
+          "Generating and refactoring Terraform with AI, safely",
+          "AI-assisted code review and catching insecure defaults",
+          "Pair-programming cloud architecture decisions",
+          "Project: ship a reviewed, AI-assisted IaC stack",
+        ],
+      },
+      {
+        title: "AI for Operations & Troubleshooting",
+        lessons: 12,
+        summary: "Cut time-to-resolution with AI on logs, metrics, and incidents.",
+        topics: [
+          "AI-assisted log and metric analysis",
+          "Incident triage and root-cause prompting",
+          "Generating runbooks, postmortems, and docs",
+          "Guardrails: avoiding confident-but-wrong fixes",
+        ],
+      },
+      {
+        title: "Building AI-Powered Tools",
+        lessons: 14,
+        summary: "Go from consumer of AI to builder of AI-powered automation.",
+        topics: [
+          "Calling LLM APIs from your own scripts and services",
+          "Retrieval over your runbooks and docs (RAG basics)",
+          "Building a focused ops agent or automation",
+          "Capstone: an AI-powered tool that solves a real task",
+        ],
+      },
+      {
+        title: "Responsible & Secure AI Use",
+        lessons: 8,
+        summary: "Use AI in a way that won't get you (or your employer) burned.",
+        topics: [
+          "Data handling, secrets, and what never goes in a prompt",
+          "Hallucination, bias, and verification habits",
+          "Cost, rate limits, and choosing the right model",
+          "Team policies and the emerging AI engineering role",
+        ],
+      },
+      {
+        title: "AI-Accelerated Job Search",
+        lessons: 12,
+        summary: "Use AI to land the role — without sounding like everyone else who used AI.",
+        topics: [
+          "AI-assisted resume and LinkedIn that still sound like you",
+          "Mock interviews and feedback loops with AI",
+          "Talking credibly about AI in interviews",
+          "Targeting and outreach, accelerated with AI",
+        ],
+      },
+    ],
+    price: {
+      amount: "$2,600",
+      cadence: "or 3 monthly payments",
+      note: "Includes all live sessions, AI-powered labs, the capstone review, and job-search support.",
+    },
+    faqs: [
+      {
+        q: "Do I need to be technical already?",
+        a: "You should be comfortable on the command line and with the basics of cloud or systems work — for example coming from IT support, sysadmin, or junior engineering. This program teaches you to accelerate that work with AI, not to start from absolute zero.",
+      },
+      {
+        q: "Won't AI tools make engineers obsolete?",
+        a: "The opposite is happening: engineers who use AI well are pulling ahead of those who don't. This cohort is built to make you that engineer — faster output, but with the judgment to know when the AI is wrong.",
+      },
+      {
+        q: "Which AI tools will I learn?",
+        a: "Primarily Claude, GitHub Copilot, and Cursor, plus calling LLM APIs directly for the capstone. The skills transfer across tools as the landscape changes.",
+      },
+      {
+        q: "How much time should I budget each week?",
+        a: "Plan for 8–12 hours per week: one live session plus labs and your capstone. Everything is recorded, so you can keep pace alongside a full-time job.",
+      },
+    ],
+  },
+  {
     slug: "cloud-engineer-career-sprint",
     icon: Cloud,
     title: "Cloud Engineer Career Sprint",
-    tag: "Flagship",
-    desc: "Our signature 12-week cohort that takes you from sysadmin or support into a paid cloud engineering role.",
+    tag: "Cohort",
+    desc: "Our 12-week cohort that takes you from sysadmin or support into a paid cloud engineering role.",
     tagline:
       "A 12-week, mentor-led sprint that takes you from where you are now to interview-ready cloud engineer — building real AWS and Azure systems, not watching tutorials.",
     format: "Cohort",
     level: "Intermediate",
     duration: "12 weeks",
-    featured: true,
     outcomes: [
       "Design and deploy production-grade cloud architecture on AWS and Azure",
       "Ship a portfolio of three real infrastructure projects employers recognize",
