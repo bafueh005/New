@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -14,20 +15,41 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
+import { PROGRAMS, getProgramBySlug } from "@/lib/programs-data";
+import { getServiceBySlug } from "@/lib/services-data";
 
-const PROGRAMS = [
-  "Resume Review",
+const GENERIC_OPTIONS = [
   "Career Consultation",
+  "Resume Review",
   "Interview Coaching",
-  "Infrastructure Mentorship",
-  "Cloud & DevOps Accelerator",
-  "Premium Career Transformation",
   "Not sure yet",
 ];
+const BASE_OPTIONS = [...PROGRAMS.map((p) => p.title), ...GENERIC_OPTIONS];
 
 const TIME_SLOTS = ["9:00 AM", "10:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:30 PM"];
 
 export default function ContactPage() {
+  return (
+    <Suspense fallback={null}>
+      <ContactContent />
+    </Suspense>
+  );
+}
+
+function ContactContent() {
+  const searchParams = useSearchParams();
+  const programSlug = searchParams.get("program");
+  const serviceSlug = searchParams.get("service");
+  const preselected =
+    (programSlug && getProgramBySlug(programSlug)?.title) ||
+    (serviceSlug && getServiceBySlug(serviceSlug)?.title) ||
+    null;
+  const programOptions =
+    preselected && !BASE_OPTIONS.includes(preselected)
+      ? [preselected, ...BASE_OPTIONS]
+      : BASE_OPTIONS;
+  const defaultProgram = preselected ?? "Not sure yet";
+
   const [submitted, setSubmitted] = useState(false);
   const [slot, setSlot] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -119,6 +141,15 @@ export default function ContactPage() {
                   </span>
                 </div>
 
+                {preselected && (
+                  <div className="flex items-start gap-2.5 rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-800 dark:text-cyan-100">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500" />
+                    <span>
+                      You&apos;re enquiring about <span className="font-semibold">{preselected}</span>. We&apos;ve pre-filled it below — change it anytime.
+                    </span>
+                  </div>
+                )}
+
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Full name"><input name="name" required className="input" placeholder="Adaeze Nwosu" /></Field>
                   <Field label="Work email"><input name="email" required type="email" className="input" placeholder="you@company.com" /></Field>
@@ -133,8 +164,8 @@ export default function ContactPage() {
                 </div>
 
                 <Field label="Program of interest">
-                  <select name="program" className="input" defaultValue={PROGRAMS[6]}>
-                    {PROGRAMS.map((p) => <option key={p}>{p}</option>)}
+                  <select name="program" className="input" defaultValue={defaultProgram}>
+                    {programOptions.map((p) => <option key={p}>{p}</option>)}
                   </select>
                 </Field>
 
