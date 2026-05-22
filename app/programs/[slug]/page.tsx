@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Layers,
   PlayCircle,
+  Quote,
 } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CtaSection } from "@/components/cta-section";
@@ -133,6 +134,28 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
                 ))}
               </ul>
             </div>
+
+            {/* Testimonial */}
+            {program.testimonial && (
+              <figure className="relative overflow-hidden rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 p-8 text-white shadow-xl shadow-cyan-500/10">
+                <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-400/20 blur-3xl" />
+                <Quote className="h-8 w-8 text-cyan-300/60" />
+                <blockquote className="mt-4 text-lg leading-relaxed text-slate-100">
+                  &ldquo;{program.testimonial.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 text-sm font-semibold text-white shadow">
+                    {program.testimonial.initials}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{program.testimonial.name}</p>
+                    <p className="text-xs text-slate-300">
+                      {program.testimonial.role} · {program.testimonial.company}
+                    </p>
+                  </div>
+                </figcaption>
+              </figure>
+            )}
 
             {/* FAQ */}
             <div>

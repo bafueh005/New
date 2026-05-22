@@ -21,6 +21,14 @@ export type ProgramFaq = {
   a: string;
 };
 
+export type ProgramTestimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  initials: string;
+};
+
 export type Program = {
   slug: string;
   icon: LucideIcon;
@@ -43,6 +51,7 @@ export type Program = {
     note: string;
   };
   faqs: readonly ProgramFaq[];
+  testimonial?: ProgramTestimonial;
 };
 
 export const PROGRAMS: readonly Program[] = [
@@ -164,6 +173,14 @@ export const PROGRAMS: readonly Program[] = [
         a: "Plan for 8–12 hours per week: one live session plus labs and your capstone. Everything is recorded, so you can keep pace alongside a full-time job.",
       },
     ],
+    testimonial: {
+      quote:
+        "I was already a decent cloud engineer, but I was slow and nervous about AI tools. This cohort flipped that — I now ship Terraform and debug incidents with Claude and Cursor in a fraction of the time, and I actually understand what they output. My AI ops capstone became the thing every interviewer wanted to talk about. Two offers in six weeks.",
+      name: "Daniel O.",
+      role: "Cloud Engineer → Senior Platform Engineer",
+      company: "Stripe",
+      initials: "DO",
+    },
   },
   {
     slug: "cloud-engineer-career-sprint",
