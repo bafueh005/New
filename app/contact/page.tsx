@@ -22,6 +22,7 @@ const GENERIC_OPTIONS = [
   "Career Consultation",
   "Resume Review",
   "Interview Coaching",
+  "Share your story",
   "Not sure yet",
 ];
 const BASE_OPTIONS = [...PROGRAMS.map((p) => p.title), ...GENERIC_OPTIONS];
@@ -40,9 +41,11 @@ function ContactContent() {
   const searchParams = useSearchParams();
   const programSlug = searchParams.get("program");
   const serviceSlug = searchParams.get("service");
+  const topic = searchParams.get("topic");
   const preselected =
     (programSlug && getProgramBySlug(programSlug)?.title) ||
     (serviceSlug && getServiceBySlug(serviceSlug)?.title) ||
+    (topic === "testimonial" ? "Share your story" : null) ||
     null;
   const programOptions =
     preselected && !BASE_OPTIONS.includes(preselected)
