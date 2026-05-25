@@ -12,9 +12,9 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const service = getServiceBySlug(params.slug);
-  if (!service) return { title: "Service not found — Boasystemz" };
+  if (!service) return { title: "Service not found" };
   return {
-    title: `${service.title} — Boasystemz`,
+    title: service.title,
     description: service.desc,
   };
 }

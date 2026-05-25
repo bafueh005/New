@@ -6,9 +6,9 @@ import { CtaSection } from "@/components/cta-section";
 import { PROGRAMS, totalLessons } from "@/lib/programs-data";
 
 export const metadata: Metadata = {
-  title: "Programs — Cohorts, Bootcamps & Mentorship Sprints",
+  title: "Programs, Cohorts, Bootcamps & Mentorship Sprints",
   description:
-    "Structured, mentor-led programs from Boasystemz: the Cloud Engineer Career Sprint, DevOps Accelerator, Cybersecurity Analyst Launchpad, Zero to Hired Bootcamp, and more — built by senior engineers.",
+    "Structured, mentor-led programs from Boasystemz: the Cloud Engineer Career Sprint, DevOps Accelerator, Cybersecurity Analyst Launchpad, Zero to Hired Bootcamp, and more, built by senior engineers.",
 };
 
 export default function ProgramsPage() {
@@ -24,7 +24,7 @@ export default function ProgramsPage() {
             Structured paths from <span className="gradient-text">where you are</span> to hired.
           </>
         }
-        description="Pick a mentor-led cohort, a self-paced intensive, or a focused 1:1 sprint. Every program is built and taught by senior engineers — and ends with you interview-ready, not just certificate-ready."
+        description="Pick a mentor-led cohort, a self-paced intensive, or a focused 1:1 sprint. Every program is built and taught by senior engineers, and ends with you interview-ready, not just certificate-ready."
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/contact" className="btn-primary">

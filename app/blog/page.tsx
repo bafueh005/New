@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/page-header";
 import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — IT Career, Cloud, DevOps, and Infrastructure Insights",
+  title: "Blog, IT Career, Cloud, DevOps, and Infrastructure Insights",
   description:
     "Career roadmaps, interview prep, and infrastructure deep dives for engineers. Topics include VMware, Azure, AWS, Kubernetes, Linux, DevOps, and cybersecurity.",
 };

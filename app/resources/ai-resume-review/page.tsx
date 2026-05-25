@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const SCORES = [
-  { label: "ATS Compatibility", value: 92, hint: "Excellent — parses cleanly across all major systems." },
+  { label: "ATS Compatibility", value: 92, hint: "Excellent, parses cleanly across all major systems." },
   { label: "Keyword Match", value: 87, hint: "Matched 27 of 31 target keywords for Sr. Cloud Engineer roles." },
   { label: "Outcome Density", value: 74, hint: "Most bullets describe activity, not outcome. Reframe 6 lines." },
   { label: "Action-Verb Strength", value: 84, hint: "Solid. Replace 'responsible for' (3x) with stronger verbs." },
@@ -25,7 +25,7 @@ const SCORES = [
 
 const ISSUES = [
   { sev: "high", title: "6 bullets describe what you did, not what changed", fix: "Convert activity-bullets to outcomes: uptime, latency, $ saved, MTTR, etc." },
-  { sev: "med", title: "Keyword 'IaC' missing — appears in 78% of target JDs", fix: "Add 'Terraform · IaC' alongside your AWS work in 2023–2024." },
+  { sev: "med", title: "Keyword 'IaC' missing, appears in 78% of target JDs", fix: "Add 'Terraform · IaC' alongside your AWS work in 2023–2024." },
   { sev: "med", title: "LinkedIn headline misaligned with resume target", fix: "Sync headline to 'Sr. Cloud Engineer | Terraform | AWS | Kubernetes'." },
   { sev: "low", title: "Two bullets exceed two lines", fix: "Trim 3rd and 5th bullets in 2022 role for scanability." },
 ];
@@ -146,7 +146,7 @@ export default function AIResumeReviewPage() {
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Suggested rewrites</p>
-              <h2 className="mt-1 text-xl font-semibold text-navy-950 dark:text-white">Before vs after — three sample bullets</h2>
+              <h2 className="mt-1 text-xl font-semibold text-navy-950 dark:text-white">Before vs after, three sample bullets</h2>
             </div>
             <Link href="/contact" className="btn-secondary">Apply rewrites with a mentor</Link>
           </div>

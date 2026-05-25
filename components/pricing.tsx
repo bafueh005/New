@@ -101,7 +101,7 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Premium Career Transformation",
     price: 0,
     cadence: "end-to-end",
-    summary: "Strategy, training, branding, applications, and negotiation — bundled.",
+    summary: "Strategy, training, branding, applications, and negotiation, bundled.",
     features: [
       "Dedicated senior mentor",
       "Custom curriculum across cloud, infra, security",
@@ -123,7 +123,7 @@ export function Pricing({ compact = false }: { compact?: boolean }) {
           align="center"
           eyebrow="Programs"
           title={<>Programs for every <span className="gradient-text">stage of your career</span>.</>}
-          description="Every program is free, mentor-led, and outcome-focused. Start with a single coaching session or go end-to-end — no card required."
+          description="Every program is free, mentor-led, and outcome-focused. Start with a single coaching session or go end-to-end, no card required."
         />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">

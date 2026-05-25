@@ -25,7 +25,7 @@ const STORIES = [
     salaryFrom: 56,
     salaryTo: 118,
     quote:
-      "The VMware mentorship was real. We rebuilt vSphere labs from scratch, simulated outages, and prepped me on actual incidents. Hiring manager asked what my background was — I told them, and he just laughed.",
+      "The VMware mentorship was real. We rebuilt vSphere labs from scratch, simulated outages, and prepped me on actual incidents. Hiring manager asked what my background was. I told him, and he just laughed.",
     initials: "MT",
     color: "from-emerald-500 to-cyan-600",
   },
@@ -36,7 +36,7 @@ const STORIES = [
     salaryFrom: 102,
     salaryTo: 187,
     quote:
-      "I had no DevOps experience. Their accelerator walked me through Terraform, Argo CD, and Kubernetes — and the mock interviews caught every weak spot before it cost me an offer.",
+      "I had no DevOps experience. Their accelerator walked me through Terraform, Argo CD, and Kubernetes. The mock interviews caught every weak spot before it cost me an offer.",
     initials: "PR",
     color: "from-violet-500 to-indigo-600",
   },
@@ -80,7 +80,7 @@ const STORIES = [
     salaryFrom: 81,
     salaryTo: 174,
     quote:
-      "I was stuck running manual tests for 4 years. My mentor mapped out an SRE roadmap — Prometheus, on-call runbooks, SLOs — and ran chaos engineering scenarios with me until I could lead the conversation.",
+      "I was stuck running manual tests for 4 years. My mentor mapped out an SRE roadmap covering Prometheus, on-call runbooks, and SLOs, then ran chaos engineering scenarios with me until I could lead the conversation.",
     initials: "TB",
     color: "from-indigo-500 to-violet-600",
   },
@@ -91,7 +91,7 @@ const STORIES = [
     salaryFrom: 79,
     salaryTo: 152,
     quote:
-      "Pivoting into security at 38 felt impossible. The team gave me a real lab — IAM hardening, GuardDuty triage, incident response — and rehearsed every panel question. Two offers in seven weeks.",
+      "Pivoting into security at 38 felt impossible. The team gave me a real lab covering IAM hardening, GuardDuty triage, and incident response, then rehearsed every panel question with me. Two offers in seven weeks.",
     initials: "LD",
     color: "from-fuchsia-500 to-pink-600",
   },
@@ -113,7 +113,7 @@ const STORIES = [
     salaryFrom: 71,
     salaryTo: 142,
     quote:
-      "I knew SQL but not pipelines. They walked me through Airflow, dbt, and Snowflake on a real project — then drilled me on system design. The third interview, I felt like I'd done the job for years.",
+      "I knew SQL but not pipelines. They walked me through Airflow, dbt, and Snowflake on a real project, then drilled me on system design. By the third interview, I felt like I'd done the job for years.",
     initials: "CE",
     color: "from-sky-500 to-blue-600",
   },
@@ -135,7 +135,7 @@ const STORIES = [
     salaryFrom: 48,
     salaryTo: 135,
     quote:
-      "I taught math for a decade. The career-change track was relentless — labs, study cohorts, weekly mock interviews. I never felt alone. When the offer came, it was almost triple my old salary.",
+      "I taught math for a decade. The career-change track was relentless, labs, study cohorts, weekly mock interviews. I never felt alone. When the offer came, it was almost triple my old salary.",
     initials: "MJ",
     color: "from-pink-500 to-rose-600",
   },
@@ -257,7 +257,7 @@ export function Testimonials() {
           <SectionHeading
             eyebrow="Watch their stories"
             title={<>In their <span className="gradient-text">own words</span>.</>}
-            description="Short video testimonials from engineers we've helped — sit down with them for 90 seconds."
+            description="Short video testimonials from engineers we've helped, sit down with them for 90 seconds."
           />
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -271,7 +271,7 @@ export function Testimonials() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
                 className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl border border-slate-200 text-left dark:border-white/10"
-                aria-label={v.videoUrl ? `Play ${v.name}'s testimonial` : `${v.name}'s testimonial — coming soon`}
+                aria-label={v.videoUrl ? `Play ${v.name}'s testimonial` : `${v.name}'s testimonial, coming soon`}
               >
                 <div
                   aria-hidden

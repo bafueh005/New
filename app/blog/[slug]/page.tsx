@@ -59,7 +59,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <div className="prose-content space-y-6 text-base leading-relaxed text-slate-700 dark:text-slate-300">
             <p>
               The most common career mistake we see in IT is treating job-hunting like a numbers game. Engineers apply to
-              200, 300, sometimes 500 roles — and end up with a handful of phone screens and zero offers. The fix isn&apos;t
+              200, 300, sometimes 500 roles, and end up with a handful of phone screens and zero offers. The fix isn&apos;t
               applying more. It&apos;s applying differently, to different roles, with a different story.
             </p>
             <h2 className="text-2xl font-semibold tracking-tight text-navy-950 dark:text-white">Where engineers get stuck</h2>
@@ -71,7 +71,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <h2 className="text-2xl font-semibold tracking-tight text-navy-950 dark:text-white">The system that works</h2>
             <p>
               Position the work first. Translate every project into outcomes: uptime, latency, cost, mean-time-to-recovery.
-              Then move into targeted applications — 10–15 great fits at a time, not 200 random ones. Then live mock
+              Then move into targeted applications, 10–15 great fits at a time, not 200 random ones. Then live mock
               interviews until the answers feel boring to deliver. By the time you walk into a real loop, you&apos;ve already
               done this five times under pressure.
             </p>
@@ -81,11 +81,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <h2 className="text-2xl font-semibold tracking-tight text-navy-950 dark:text-white">What to do next</h2>
             <p>
               Pick one project from your past two years. Rewrite it in three lines: what you were asked to do, what you
-              actually did, and what changed. Most engineers find the second line is the weakest — and the most important.
+              actually did, and what changed. Most engineers find the second line is the weakest, and the most important.
             </p>
             <p>
               When you&apos;re ready for senior feedback, book a free consultation. We&apos;ll diagnose what&apos;s
-              actually blocking your interviews and tell you what we&apos;d do next — even if it isn&apos;t with us.
+              actually blocking your interviews and tell you what we&apos;d do next, even if it isn&apos;t with us.
             </p>
           </div>
 

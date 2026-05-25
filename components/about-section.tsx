@@ -14,7 +14,7 @@ const PILLARS = [
   {
     icon: ScrollText,
     title: "Mentorship-driven, not lecture-driven",
-    desc: "Every engagement is 1:1 or small-cohort. You ship work, get feedback, and iterate — like a real team.",
+    desc: "Every engagement is 1:1 or small-cohort. You ship work, get feedback, and iterate, like a real team.",
   },
   {
     icon: HeartHandshake,
@@ -40,7 +40,7 @@ export function AboutSection() {
               description={
                 <>
                   Boasystemz was founded by senior infrastructure and cloud engineers who
-                  spent years on both sides of the hiring table — building enterprise
+                  spent years on both sides of the hiring table, building enterprise
                   platforms by day, coaching peers and juniors by night. We saw too many
                   talented engineers stuck in a loop of cold applications, generic resumes,
                   and untested interview prep.

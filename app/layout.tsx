@@ -8,7 +8,7 @@ import { LiveChat } from "@/components/live-chat";
 export const metadata: Metadata = {
   metadataBase: new URL("https://boasystemz.com"),
   title: {
-    default: "Boasystemz — Land IT Interviews & Offers, Faster",
+    default: "Boasystemz: Land IT Interviews & Offers Faster",
     template: "%s | Boasystemz",
   },
   description:
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Boasystemz" }],
   creator: "Boasystemz",
   openGraph: {
-    title: "Boasystemz — Career Acceleration for IT Professionals",
+    title: "Boasystemz: Career Acceleration for IT Professionals",
     description:
       "Personalized mentorship, resume branding, and interview prep designed to convert applications into offers.",
     url: "https://boasystemz.com",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boasystemz — Career Acceleration for IT Professionals",
+    title: "Boasystemz: Career Acceleration for IT Professionals",
     description:
       "Stop applying to hundreds of jobs without hearing back. Land interviews and offers faster with Boasystemz.",
   },

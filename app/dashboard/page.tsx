@@ -47,7 +47,7 @@ const APPS = [
   { co: "Microsoft", role: "Cloud Solution Architect", stage: "Tech screen 2/3", status: "active", date: "May 19" },
   { co: "Lockheed Martin", role: "VMware Engineer III", stage: "Recruiter call", status: "active", date: "May 17" },
   { co: "AWS", role: "DevOps Engineer", stage: "Offer pending", status: "offer", date: "May 15" },
-  { co: "Cisco", role: "Platform Engineer", stage: "Rejected — under-leveled", status: "closed", date: "May 12" },
+  { co: "Cisco", role: "Platform Engineer", stage: "Rejected, under-leveled", status: "closed", date: "May 12" },
 ];
 
 const NAV = [

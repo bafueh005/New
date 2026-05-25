@@ -45,7 +45,7 @@ export const SERVICES: readonly Service[] = [
     slug: "ai-engineering-mentorship",
     icon: Brain,
     title: "AI Engineering Mentorship",
-    desc: "LLMs, RAG, vector DBs, agents, and AI platform engineering — taught with production patterns.",
+    desc: "LLMs, RAG, vector DBs, agents, and AI platform engineering, taught with production patterns.",
     tag: "AI",
     bullets: [
       "LLM application design: prompts, evals, guardrails, cost control",
@@ -71,7 +71,7 @@ export const SERVICES: readonly Service[] = [
     slug: "cybersecurity-career-coaching",
     icon: ShieldCheck,
     title: "Cybersecurity Career Coaching",
-    desc: "Career strategy for SOC, GRC, AppSec, and Red Team roles — with certification roadmaps.",
+    desc: "Career strategy for SOC, GRC, AppSec, and Red Team roles, with certification roadmaps.",
     tag: "Security",
     bullets: [
       "Career path mapping: SOC, GRC, AppSec, Red Team, Cloud Sec",
@@ -110,7 +110,7 @@ export const SERVICES: readonly Service[] = [
     slug: "vmware-engineering-mentorship",
     icon: Boxes,
     title: "VMware Engineering Mentorship",
-    desc: "vSphere, vSAN, NSX-T, vRealize — from datacenter ops to enterprise migration projects.",
+    desc: "vSphere, vSAN, NSX-T, vRealize, from datacenter ops to enterprise migration projects.",
     tag: "Virtualization",
     bullets: [
       "vSphere, vCenter, and ESXi operations",
@@ -123,7 +123,7 @@ export const SERVICES: readonly Service[] = [
     slug: "network-engineering-coaching",
     icon: Network,
     title: "Network Engineering Coaching",
-    desc: "Routing, switching, firewalls, SD-WAN. Cisco, Palo Alto, Fortinet — interview-ready.",
+    desc: "Routing, switching, firewalls, SD-WAN. Cisco, Palo Alto, Fortinet. Interview-ready.",
     tag: "Networking",
     bullets: [
       "Routing & switching with Cisco IOS and NX-OS",
@@ -136,7 +136,7 @@ export const SERVICES: readonly Service[] = [
     slug: "linux-and-windows-server-mentorship",
     icon: Terminal,
     title: "Linux & Windows Server Mentorship",
-    desc: "Shell scripting, automation, AD, GPOs, Bash, PowerShell — practical, not theoretical.",
+    desc: "Shell scripting, automation, AD, GPOs, Bash, PowerShell. Practical, not theoretical.",
     tag: "Platforms",
     bullets: [
       "Bash and PowerShell scripting for automation",
@@ -188,7 +188,7 @@ export const SERVICES: readonly Service[] = [
     slug: "linkedin-branding",
     icon: Linkedin,
     title: "LinkedIn Branding",
-    desc: "Profile rewrites, headline strategy, content guidance — turn LinkedIn into a pipeline.",
+    desc: "Profile rewrites, headline strategy, content guidance, turn LinkedIn into a pipeline.",
     tag: "Brand",
     bullets: [
       "Profile rewrite: headline, about, experience, featured",
@@ -201,7 +201,7 @@ export const SERVICES: readonly Service[] = [
     slug: "technical-mock-interviews",
     icon: Mic,
     title: "Technical Mock Interviews",
-    desc: "Live mock interviews with senior engineers — system design, troubleshooting, behavioral.",
+    desc: "Live mock interviews with senior engineers, system design, troubleshooting, behavioral.",
     tag: "Interviews",
     bullets: [
       "Live mock interviews with senior engineers",

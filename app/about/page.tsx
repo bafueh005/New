@@ -37,7 +37,7 @@ export default function AboutPage() {
           <>
             Boasystemz is a mentorship-first career acceleration company. We work
             primarily with infrastructure, cloud, security, and platform engineers who
-            are great at their jobs — but stuck in the application loop.
+            are great at their jobs, but stuck in the application loop.
           </>
         }
       >

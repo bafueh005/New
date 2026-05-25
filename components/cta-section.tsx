@@ -35,7 +35,7 @@ export function CtaSection() {
               </h2>
               <p className="mt-4 max-w-xl text-base text-slate-300">
                 Book a free 30-minute consultation. We&apos;ll map out exactly what&apos;s blocking
-                your interviews and offers — and the fastest path through it.
+                your interviews and offers, and the fastest path through it.
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Link

@@ -8,7 +8,7 @@ import { HowItWorks } from "@/components/how-it-works";
 import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
-  title: "Services — Mentorship, Coaching, and Career Acceleration",
+  title: "Services, Mentorship, Coaching, and Career Acceleration",
   description:
     "Explore Boasystemz services: cloud engineering mentorship, DevOps coaching, cybersecurity career strategy, VMware and infrastructure training, resume optimization, and mock interviews.",
 };
