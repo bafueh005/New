@@ -23,7 +23,6 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Career Consultation",
     price: 0,
     cadence: "30-min session",
-    badge: "Free",
     summary: "A focused 30-minute session to diagnose what's blocking you and map your next move. No card required.",
     features: [
       "Career mapping for target roles",
@@ -37,7 +36,7 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: "resume",
     name: "Resume Review",
-    price: 149,
+    price: 0,
     cadence: "one-time",
     summary: "Senior-engineer rewrite, ATS optimization, recruiter-tested format.",
     features: [
@@ -52,7 +51,7 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: "interview",
     name: "Interview Coaching",
-    price: 599,
+    price: 0,
     cadence: "4 sessions",
     summary: "Live mock interviews with senior IC and hiring-manager feedback.",
     features: [
@@ -67,8 +66,8 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: "infrastructure",
     name: "Infrastructure Mentorship",
-    price: 1490,
-    cadence: "/ month",
+    price: 0,
+    cadence: "ongoing",
     summary: "1:1 mentorship for sysadmin, network, VMware, and platform engineers.",
     features: [
       "Weekly 1:1 mentor sessions",
@@ -82,8 +81,8 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: "accelerator",
     name: "Cloud & DevOps Accelerator",
-    price: 1990,
-    cadence: "/ month",
+    price: 0,
+    cadence: "12-week program",
     badge: "Most popular",
     highlight: true,
     summary: "Become an AWS / Azure / Kubernetes engineer in 12 weeks.",
@@ -100,9 +99,9 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: "transformation",
     name: "Premium Career Transformation",
-    price: 3490,
-    cadence: "/ month",
-    summary: "End-to-end. Strategy, training, branding, applications, negotiation.",
+    price: 0,
+    cadence: "end-to-end",
+    summary: "Strategy, training, branding, applications, and negotiation — bundled.",
     features: [
       "Dedicated senior mentor",
       "Custom curriculum across cloud, infra, security",
@@ -122,9 +121,9 @@ export function Pricing({ compact = false }: { compact?: boolean }) {
       <div className="container-px mx-auto max-w-7xl">
         <SectionHeading
           align="center"
-          eyebrow="Pricing"
+          eyebrow="Programs"
           title={<>Programs for every <span className="gradient-text">stage of your career</span>.</>}
-          description="Start with a single coaching session, or invest in a full career transformation. Every program is mentor-led and outcome-focused."
+          description="Every program is free, mentor-led, and outcome-focused. Start with a single coaching session or go end-to-end — no card required."
         />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">

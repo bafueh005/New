@@ -6,19 +6,19 @@ import { CtaSection } from "@/components/cta-section";
 import { ArrowRight, Check, ShieldCheck, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pricing — Programs for every stage of your IT career",
+  title: "Programs — Free, mentor-led for every stage of your IT career",
   description:
-    "Transparent pricing for Boasystemz programs: resume review, career consultation, interview coaching, infrastructure mentorship, cloud & DevOps accelerator, and premium career transformation.",
+    "Free engineering career programs from Boasystemz: resume review, career consultation, interview coaching, infrastructure mentorship, cloud & DevOps accelerator, and premium career transformation.",
 };
 
 const FAQ = [
   {
-    q: "Do you offer a money-back guarantee?",
-    a: "Yes. If you complete the first month of the Premium Career Transformation program and don't see measurable progress, we refund the difference. We're proud of the outcomes, not the price.",
+    q: "Is every program really free?",
+    a: "Yes. From a single Career Consultation to the full Premium Career Transformation, there's no cost and no card required. We're focused on outcomes — pricing was the biggest barrier we saw engineers hit, so we removed it.",
   },
   {
-    q: "Can I pay per session instead of monthly?",
-    a: "Absolutely. Resume Review, Career Consultation, and Interview Coaching are one-time engagements. Mentorship and accelerator programs are monthly so we can sustain momentum.",
+    q: "How do I get started?",
+    a: "Book a free 30-minute consultation. We'll diagnose what's blocking your interviews and recommend the right program — even if it isn't with us. From there, you can start the program you choose with no payment step.",
   },
   {
     q: "Do you help international engineers?",
@@ -53,9 +53,9 @@ export default function PricingPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Pricing"
+        eyebrow="Programs"
         title={<>Programs for every <span className="gradient-text">stage of your IT career</span>.</>}
-        description="From a single resume review to a full career transformation. Transparent pricing, no hidden fees, no contracts you can't cancel."
+        description="Every program is free, mentor-led, and outcome-focused. From a single resume review to a full career transformation — no card, no contracts, no hidden fees."
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/contact" className="btn-primary">Book a free consultation <ArrowRight className="h-4 w-4" /></Link>
@@ -99,8 +99,8 @@ export default function PricingPage() {
 
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {[
-              { icon: ShieldCheck, t: "30-day money-back", d: "On all monthly programs." },
-              { icon: Sparkles, t: "No long contracts", d: "Cancel any month. Keep your materials." },
+              { icon: ShieldCheck, t: "No card required", d: "Apply and start without payment." },
+              { icon: Sparkles, t: "No long contracts", d: "Leave anytime. Keep all your materials." },
               { icon: Check, t: "Real mentors", d: "Every engagement is human-led. No bots." },
             ].map((x) => (
               <div key={x.t} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-white/[0.03]">
