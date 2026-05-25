@@ -19,6 +19,22 @@ type PricingTier = {
 
 export const PRICING_TIERS: PricingTier[] = [
   {
+    id: "consultation",
+    name: "Career Consultation",
+    price: 0,
+    cadence: "30-min session",
+    badge: "Free",
+    summary: "A focused 30-minute session to diagnose what's blocking you and map your next move. No card required.",
+    features: [
+      "Career mapping for target roles",
+      "Skill-gap analysis",
+      "Salary band research",
+      "Job application strategy",
+      "Action plan & follow-up doc",
+    ],
+    cta: "Book free consultation",
+  },
+  {
     id: "resume",
     name: "Resume Review",
     price: 149,
@@ -32,21 +48,6 @@ export const PRICING_TIERS: PricingTier[] = [
       "1 round of revisions",
     ],
     cta: "Start with a resume review",
-  },
-  {
-    id: "consultation",
-    name: "Career Consultation",
-    price: 199,
-    cadence: "one-time",
-    summary: "A focused 90-minute session to map your next 12 months.",
-    features: [
-      "Career mapping for target roles",
-      "Skill-gap analysis",
-      "Salary band research",
-      "Job application strategy",
-      "Action plan & follow-up doc",
-    ],
-    cta: "Book consultation",
   },
   {
     id: "interview",
@@ -159,7 +160,9 @@ export function Pricing({ compact = false }: { compact?: boolean }) {
               </p>
 
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-4xl font-semibold tracking-tight">${t.price.toLocaleString()}</span>
+                <span className="text-4xl font-semibold tracking-tight">
+                  {t.price === 0 ? "Free" : `$${t.price.toLocaleString()}`}
+                </span>
                 <span className={`${t.highlight ? "text-slate-300" : "text-slate-500 dark:text-slate-400"} text-sm`}>
                   {t.cadence}
                 </span>
