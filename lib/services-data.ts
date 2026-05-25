@@ -1,5 +1,6 @@
 import {
   Briefcase,
+  Brain,
   Cloud,
   ShieldCheck,
   GitBranch,
@@ -38,6 +39,19 @@ export const SERVICES: readonly Service[] = [
       "Architecture reviews and infrastructure roadmaps",
       "Tooling, observability, and reliability assessments",
       "Senior-engineer interview panels and rubric design",
+    ],
+  },
+  {
+    slug: "ai-engineering-mentorship",
+    icon: Brain,
+    title: "AI Engineering Mentorship",
+    desc: "LLMs, RAG, vector DBs, agents, and AI platform engineering — taught with production patterns.",
+    tag: "AI",
+    bullets: [
+      "LLM application design: prompts, evals, guardrails, cost control",
+      "RAG pipelines with vector DBs (pgvector, Pinecone, Weaviate)",
+      "Agent and tool-use patterns with the Anthropic and OpenAI SDKs",
+      "MLOps & AI platform work: GPU infra, inference serving, observability",
     ],
   },
   {
