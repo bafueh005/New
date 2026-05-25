@@ -33,7 +33,7 @@ export function Stats() {
           </div>
           <p className="text-sm text-slate-300/80">
             Every metric below is grounded in real engineers, real interviews, and real
-            offers — tracked across our active and alumni cohorts.
+            offers, tracked across our active and alumni cohorts.
           </p>
         </div>
 

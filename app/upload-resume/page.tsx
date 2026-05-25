@@ -142,7 +142,7 @@ export default function UploadResumePage() {
                 <li>• Use your most recent role-specific resume (cloud, infra, etc.).</li>
                 <li>• PDF preferred for the most accurate ATS parse.</li>
                 <li>• Include 3–5 outcome-driven bullets per role.</li>
-                <li>• Don&apos;t over-design — keep it clean and parseable.</li>
+                <li>• Don&apos;t over-design, keep it clean and parseable.</li>
               </ul>
             </div>
           </div>

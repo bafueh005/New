@@ -25,7 +25,7 @@ export function AuthShell({ children, mode }: { children: React.ReactNode; mode:
                 {mode === "login" ? <>Welcome back, <span className="text-cyan-300">engineer</span>.</> : <>Build the career <span className="text-cyan-300">you actually deserve</span>.</>}
               </h1>
               <p className="mt-4 max-w-md text-base text-slate-300">
-                Track applications, run mock interviews, optimize your resume with AI, and work with senior mentors — all in one workspace.
+                Track applications, run mock interviews, optimize your resume with AI, and work with senior mentors, all in one workspace.
               </p>
 
               <div className="mt-8 space-y-3 text-sm text-slate-200">
@@ -37,7 +37,7 @@ export function AuthShell({ children, mode }: { children: React.ReactNode; mode:
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <p className="text-sm italic text-slate-200">&ldquo;Three months in. Six interviews. Two offers. The system works.&rdquo;</p>
-              <p className="mt-2 text-xs text-slate-400">— Adaeze N., Sr. Cloud Engineer @ Capital One</p>
+              <p className="mt-2 text-xs text-slate-400">Adaeze N., Sr. Cloud Engineer @ Capital One</p>
             </div>
           </div>
         </div>

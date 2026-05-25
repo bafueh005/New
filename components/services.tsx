@@ -15,7 +15,7 @@ export function Services() {
         <SectionHeading
           eyebrow="What we do"
           title={<>One platform. Every part of the <span className="gradient-text">career stack</span>.</>}
-          description="Strategy, mentorship, technical skill-building, and execution — designed by senior engineers who've hired into the teams you want to join."
+          description="Strategy, mentorship, technical skill-building, and execution, designed by senior engineers who've hired into the teams you want to join."
         />
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

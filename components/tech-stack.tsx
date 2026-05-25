@@ -38,7 +38,7 @@ export function TechStack() {
         <SectionHeading
           eyebrow="Infrastructure & Technology"
           title={<>The stack <span className="gradient-text">enterprises actually run</span>.</>}
-          description="Our mentorship is grounded in the technologies that power Fortune 500 datacenters and cloud platforms — taught by engineers who run them at scale every day."
+          description="Our mentorship is grounded in the technologies that power Fortune 500 datacenters and cloud platforms, taught by engineers who run them at scale every day."
         />
 
         <div className="mt-12 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">

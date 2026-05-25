@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/cta-section";
 import { ArrowRight, Check, ShieldCheck, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Programs — Free, mentor-led for every stage of your IT career",
+  title: "Programs: Free, mentor-led for every stage of your IT career",
   description:
     "Free engineering career programs from Boasystemz: resume review, career consultation, interview coaching, infrastructure mentorship, cloud & DevOps accelerator, and premium career transformation.",
 };
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: "Is every program really free?",
-    a: "Yes. From a single Career Consultation to the full Premium Career Transformation, there's no cost and no card required. We're focused on outcomes — pricing was the biggest barrier we saw engineers hit, so we removed it.",
+    a: "Yes. From a single Career Consultation to the full Premium Career Transformation, there's no cost and no card required. We're focused on outcomes, pricing was the biggest barrier we saw engineers hit, so we removed it.",
   },
   {
     q: "How do I get started?",
-    a: "Book a free 30-minute consultation. We'll diagnose what's blocking your interviews and recommend the right program — even if it isn't with us. From there, you can start the program you choose with no payment step.",
+    a: "Book a free 30-minute consultation. We'll diagnose what's blocking your interviews and recommend the right program, even if it isn't with us. From there, you can start the program you choose with no payment step.",
   },
   {
     q: "Do you help international engineers?",
-    a: "Yes — international professionals are a major part of who we work with. We cover US, EU, and Middle East markets, plus sponsorship and relocation strategy where relevant.",
+    a: "Yes, international professionals are a major part of who we work with. We cover US, EU, and Middle East markets, plus sponsorship and relocation strategy where relevant.",
   },
   {
     q: "What if I'm a career changer with no IT background?",
@@ -39,14 +39,14 @@ const FAQ = [
 ];
 
 const COMPARE = [
-  { feature: "1:1 Sessions", a: "—", b: "1", c: "4", d: "4 / mo", e: "4 / mo", f: "Unlimited" },
-  { feature: "Resume Rewrite", a: "✓", b: "—", c: "—", d: "✓", e: "✓", f: "✓" },
-  { feature: "LinkedIn Branding", a: "—", b: "—", c: "—", d: "✓", e: "✓", f: "✓" },
-  { feature: "Mock Interviews", a: "—", b: "—", c: "4", d: "—", e: "8", f: "Unlimited" },
-  { feature: "Hands-on Labs", a: "—", b: "—", c: "—", d: "✓", e: "✓", f: "✓" },
-  { feature: "Application Strategy", a: "—", b: "✓", c: "—", d: "—", e: "✓", f: "✓" },
-  { feature: "Offer Negotiation", a: "—", b: "—", c: "✓", d: "—", e: "✓", f: "✓" },
-  { feature: "Dedicated Mentor", a: "—", b: "—", c: "—", d: "✓", e: "✓", f: "✓" },
+  { feature: "1:1 Sessions", a: "-", b: "1", c: "4", d: "4 / mo", e: "4 / mo", f: "Unlimited" },
+  { feature: "Resume Rewrite", a: "✓", b: "-", c: "-", d: "✓", e: "✓", f: "✓" },
+  { feature: "LinkedIn Branding", a: "-", b: "-", c: "-", d: "✓", e: "✓", f: "✓" },
+  { feature: "Mock Interviews", a: "-", b: "-", c: "4", d: "-", e: "8", f: "Unlimited" },
+  { feature: "Hands-on Labs", a: "-", b: "-", c: "-", d: "✓", e: "✓", f: "✓" },
+  { feature: "Application Strategy", a: "-", b: "✓", c: "-", d: "-", e: "✓", f: "✓" },
+  { feature: "Offer Negotiation", a: "-", b: "-", c: "✓", d: "-", e: "✓", f: "✓" },
+  { feature: "Dedicated Mentor", a: "-", b: "-", c: "-", d: "✓", e: "✓", f: "✓" },
 ];
 
 export default function PricingPage() {
@@ -55,7 +55,7 @@ export default function PricingPage() {
       <PageHeader
         eyebrow="Programs"
         title={<>Programs for every <span className="gradient-text">stage of your IT career</span>.</>}
-        description="Every program is free, mentor-led, and outcome-focused. From a single resume review to a full career transformation — no card, no contracts, no hidden fees."
+        description="Every program is free, mentor-led, and outcome-focused. From a single resume review to a full career transformation, no card, no contracts, no hidden fees."
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/contact" className="btn-primary">Book a free consultation <ArrowRight className="h-4 w-4" /></Link>

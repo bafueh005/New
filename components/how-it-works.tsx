@@ -21,7 +21,7 @@ const STEPS = [
   {
     icon: FileText,
     title: "Resume & LinkedIn Optimization",
-    desc: "Rewrites optimized for ATS, recruiters, and hiring managers — outcomes first.",
+    desc: "Rewrites optimized for ATS, recruiters, and hiring managers, outcomes first.",
   },
   {
     icon: Wrench,

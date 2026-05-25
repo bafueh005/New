@@ -103,7 +103,7 @@ function ContactContent() {
       <section className="section">
         <div className="container-px mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-5">
-            <InfoCard icon={CalendarCheck2} title="Schedule a free call" body={<>30 minutes, video on, no sales pitch. We&apos;ll diagnose what&apos;s blocking your interviews and tell you what we&apos;d do next — even if it isn&apos;t with us.</>} />
+            <InfoCard icon={CalendarCheck2} title="Schedule a free call" body={<>30 minutes, video on, no sales pitch. We&apos;ll diagnose what&apos;s blocking your interviews and tell you what we&apos;d do next, even if it isn&apos;t with us.</>} />
             <InfoCard icon={Mail} title="Email us" body={<a href="mailto:info@boasystemz.com" className="font-semibold text-navy-900 underline-offset-4 hover:underline dark:text-white">info@boasystemz.com</a>} />
             <InfoCard icon={Phone} title="Call or text" body="+1 (240) 784-3133 · Mon–Fri 9am–6pm PT" />
             <InfoCard icon={MapPin} title="Remote-first" body="Headquartered in California. Mentors operate across US, EMEA, and APAC." />
@@ -148,7 +148,7 @@ function ContactContent() {
                   <div className="flex items-start gap-2.5 rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-800 dark:text-cyan-100">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500" />
                     <span>
-                      You&apos;re enquiring about <span className="font-semibold">{preselected}</span>. We&apos;ve pre-filled it below — change it anytime.
+                      You&apos;re enquiring about <span className="font-semibold">{preselected}</span>. We&apos;ve pre-filled it below, change it anytime.
                     </span>
                   </div>
                 )}

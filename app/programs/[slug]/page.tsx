@@ -23,9 +23,9 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const program = getProgramBySlug(params.slug);
-  if (!program) return { title: "Program not found — Boasystemz" };
+  if (!program) return { title: "Program not found" };
   return {
-    title: `${program.title} — Boasystemz`,
+    title: program.title,
     description: program.desc,
   };
 }

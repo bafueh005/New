@@ -23,7 +23,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "vmware-interview-questions",
     title: "VMware Interview Questions: vSphere, vSAN, and NSX-T",
     excerpt:
-      "The 30 VMware questions you'll actually be asked — with the answers senior engineers want to hear.",
+      "The 30 VMware questions you'll actually be asked, with the answers senior engineers want to hear.",
     category: "Interview Prep",
     readTime: "14 min",
     date: "Apr 18, 2026",
@@ -43,7 +43,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "azure-aws-career-tips",
     title: "Azure & AWS Career Tips for Cloud Engineers",
     excerpt:
-      "What hiring managers actually look for on cloud resumes — and the projects that get past ATS screens.",
+      "What hiring managers actually look for on cloud resumes, and the projects that get past ATS screens.",
     category: "Cloud",
     readTime: "8 min",
     date: "Mar 22, 2026",

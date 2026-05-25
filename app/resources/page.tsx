@@ -14,7 +14,7 @@ import {
 import { PageHeader } from "@/components/page-header";
 
 export const metadata: Metadata = {
-  title: "Resources — Career Roadmaps, Interview Libraries, AI Resume Review",
+  title: "Resources: Career Roadmaps, Interview Libraries, AI Resume Review",
   description:
     "Free Boasystemz resources for IT professionals: career roadmaps, technical interview libraries, certification guides, and AI resume review.",
 };
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 const RESOURCES = [
   { icon: BrainCircuit, title: "AI Resume Review", desc: "Get an instant ATS score, keyword gaps, and rewrite suggestions in 60 seconds.", href: "/resources/ai-resume-review", tag: "Tool", featured: true },
   { icon: Mic, title: "Technical Interview Library", desc: "300+ real interview questions across cloud, infra, network, and security.", href: "/resources#interviews", tag: "Library" },
-  { icon: Cloud, title: "Cloud Engineer Roadmap", desc: "From zero to Sr. Cloud Engineer — skills, certs, projects, by quarter.", href: "/resources#cloud", tag: "Roadmap" },
-  { icon: Server, title: "Systems / VMware Roadmap", desc: "Sysadmin to infrastructure engineer — labs, certs, and the gaps to fill.", href: "/resources#vmware", tag: "Roadmap" },
+  { icon: Cloud, title: "Cloud Engineer Roadmap", desc: "From zero to Sr. Cloud Engineer, skills, certs, projects, by quarter.", href: "/resources#cloud", tag: "Roadmap" },
+  { icon: Server, title: "Systems / VMware Roadmap", desc: "Sysadmin to infrastructure engineer, labs, certs, and the gaps to fill.", href: "/resources#vmware", tag: "Roadmap" },
   { icon: GitBranch, title: "DevOps Bootcamp Outline", desc: "12-week structured outline covering Terraform, K8s, Argo CD, observability.", href: "/resources#devops", tag: "Curriculum" },
   { icon: ShieldCheck, title: "Cybersecurity Career Map", desc: "SOC → Engineer → Architect. Certifications, projects, and titles by level.", href: "/resources#security", tag: "Roadmap" },
-  { icon: Network, title: "Network Engineering Guide", desc: "Routing, switching, firewalls, SD-WAN — interview-ready in 6 months.", href: "/resources#networking", tag: "Roadmap" },
+  { icon: Network, title: "Network Engineering Guide", desc: "Routing, switching, firewalls, SD-WAN, interview-ready in 6 months.", href: "/resources#networking", tag: "Roadmap" },
   { icon: FileText, title: "ATS-Friendly Resume Template", desc: "Senior-engineer template, tested against real ATS systems.", href: "/resources#resume", tag: "Template" },
 ];
 
@@ -37,7 +37,7 @@ export default function ResourcesPage() {
       <PageHeader
         eyebrow="Resources"
         title={<>Free tools and roadmaps for <span className="gradient-text">IT careers</span>.</>}
-        description="Use these on your own, or bring them into a session — most of our paid programs are designed around the same frameworks."
+        description="Use these on your own, or bring them into a session, most of our paid programs are designed around the same frameworks."
       />
 
       <section className="section">

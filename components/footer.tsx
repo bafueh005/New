@@ -60,8 +60,8 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              Career acceleration for IT professionals. Strategy, mentorship, and execution —
-              built by senior engineers who&apos;ve hired into the teams you want to join.
+              Career acceleration for IT professionals. Strategy, mentorship,
+              and execution built by senior engineers who&apos;ve hired into the teams you want to join.
             </p>
 
             <form

@@ -76,7 +76,7 @@ export default function OnboardingPage() {
               {step === 0 && (
                 <motion.div key="p" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.25 }}>
                   <h2 className="text-xl font-semibold text-navy-950 dark:text-white">Tell us about you</h2>
-                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">A few basics — we&apos;ll keep this private.</p>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">A few basics, we&apos;ll keep this private.</p>
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
                     <Field label="Full name"><input className="input" placeholder="Adaeze Nwosu" /></Field>
                     <Field label="Work email"><input type="email" className="input" placeholder="you@company.com" /></Field>

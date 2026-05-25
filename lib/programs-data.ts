@@ -60,15 +60,15 @@ export const PROGRAMS: readonly Program[] = [
     icon: Sparkles,
     title: "AI-Assisted Cloud Engineer",
     tag: "Flagship",
-    desc: "Our signature 12-week cohort on using AI tools to do cloud and DevOps work faster — and to land the role.",
+    desc: "Our signature 12-week cohort on using AI tools to do cloud and DevOps work faster, and to land the role.",
     tagline:
-      "A 12-week, mentor-led cohort that teaches you to engineer cloud infrastructure with AI as your copilot — writing IaC, debugging incidents, and running your job search with tools like Claude, Copilot, and Cursor, while knowing exactly when to trust them and when to verify.",
+      "A 12-week, mentor-led cohort that teaches you to engineer cloud infrastructure with AI as your copilot, writing IaC, debugging incidents, and running your job search with tools like Claude, Copilot, and Cursor, while knowing exactly when to trust them and when to verify.",
     format: "Cohort",
     level: "Intermediate",
     duration: "12 weeks",
     featured: true,
     outcomes: [
-      "Ship cloud infrastructure faster using AI pair-programming — without shipping what you don't understand",
+      "Ship cloud infrastructure faster using AI pair-programming, without shipping what you don't understand",
       "Use AI to write, review, and refactor Terraform, pipelines, and runbooks",
       "Cut incident time with AI-assisted log analysis and troubleshooting",
       "Build a small AI-powered automation or agent for real ops work",
@@ -86,7 +86,7 @@ export const PROGRAMS: readonly Program[] = [
       {
         title: "The AI-Assisted Engineer Mindset",
         lessons: 10,
-        summary: "Learn to work with AI as a force multiplier — and where it will quietly mislead you.",
+        summary: "Learn to work with AI as a force multiplier, and where it will quietly mislead you.",
         topics: [
           "How modern coding assistants actually work (and fail)",
           "Prompting for engineering: context, constraints, iteration",
@@ -141,7 +141,7 @@ export const PROGRAMS: readonly Program[] = [
       {
         title: "AI-Accelerated Job Search",
         lessons: 12,
-        summary: "Use AI to land the role — without sounding like everyone else who used AI.",
+        summary: "Use AI to land the role, without sounding like everyone else who used AI.",
         topics: [
           "AI-assisted resume and LinkedIn that still sound like you",
           "Mock interviews and feedback loops with AI",
@@ -158,11 +158,11 @@ export const PROGRAMS: readonly Program[] = [
     faqs: [
       {
         q: "Do I need to be technical already?",
-        a: "You should be comfortable on the command line and with the basics of cloud or systems work — for example coming from IT support, sysadmin, or junior engineering. This program teaches you to accelerate that work with AI, not to start from absolute zero.",
+        a: "You should be comfortable on the command line and with the basics of cloud or systems work, for example coming from IT support, sysadmin, or junior engineering. This program teaches you to accelerate that work with AI, not to start from absolute zero.",
       },
       {
         q: "Won't AI tools make engineers obsolete?",
-        a: "The opposite is happening: engineers who use AI well are pulling ahead of those who don't. This cohort is built to make you that engineer — faster output, but with the judgment to know when the AI is wrong.",
+        a: "The opposite is happening: engineers who use AI well are pulling ahead of those who don't. This cohort is built to make you that engineer: faster output, but with the judgment to know when the AI is wrong.",
       },
       {
         q: "Which AI tools will I learn?",
@@ -175,7 +175,7 @@ export const PROGRAMS: readonly Program[] = [
     ],
     testimonial: {
       quote:
-        "I was already a decent cloud engineer, but I was slow and nervous about AI tools. This cohort flipped that — I now ship Terraform and debug incidents with Claude and Cursor in a fraction of the time, and I actually understand what they output. My AI ops capstone became the thing every interviewer wanted to talk about. Two offers in six weeks.",
+        "I was already a decent cloud engineer, but I was slow and nervous about AI tools. This cohort flipped that. I now ship Terraform and debug incidents with Claude and Cursor in a fraction of the time, and I actually understand what they output. My AI ops capstone became the thing every interviewer wanted to talk about. Two offers in six weeks.",
       name: "Daniel O.",
       role: "Cloud Engineer → Senior Platform Engineer",
       company: "Stripe",
@@ -189,7 +189,7 @@ export const PROGRAMS: readonly Program[] = [
     tag: "Cohort",
     desc: "Our 12-week cohort that takes you from sysadmin or support into a paid cloud engineering role.",
     tagline:
-      "A 12-week, mentor-led sprint that takes you from where you are now to interview-ready cloud engineer — building real AWS and Azure systems, not watching tutorials.",
+      "A 12-week, mentor-led sprint that takes you from where you are now to interview-ready cloud engineer, building real AWS and Azure systems, not watching tutorials.",
     format: "Cohort",
     level: "Intermediate",
     duration: "12 weeks",
@@ -217,7 +217,7 @@ export const PROGRAMS: readonly Program[] = [
           "How AWS and Azure are organized: accounts, regions, services",
           "Identity and access: IAM, roles, policies, least privilege",
           "Networking fundamentals: VPCs, subnets, routing, security groups",
-          "Cost mental model — what you pay for and how to control it",
+          "Cost mental model, what you pay for and how to control it",
         ],
       },
       {
@@ -284,7 +284,7 @@ export const PROGRAMS: readonly Program[] = [
     faqs: [
       {
         q: "Do I need cloud experience to start?",
-        a: "No prior cloud experience is required, but you should be comfortable with the basics of computers and a command line — for example coming from IT support, help desk, or sysadmin work. We start from a clear mental model and build up fast.",
+        a: "No prior cloud experience is required, but you should be comfortable with the basics of computers and a command line, for example coming from IT support, help desk, or sysadmin work. We start from a clear mental model and build up fast.",
       },
       {
         q: "How much time should I budget each week?",
@@ -393,7 +393,7 @@ export const PROGRAMS: readonly Program[] = [
     tag: "Cohort",
     desc: "A 10-week path into SOC and security analyst roles, with hands-on labs and a certification roadmap.",
     tagline:
-      "Ten weeks built to land your first security analyst role — real detection labs, a clear certification roadmap, and interview prep that hiring teams respect.",
+      "Ten weeks built to land your first security analyst role, real detection labs, a clear certification roadmap, and interview prep that hiring teams respect.",
     format: "Cohort",
     level: "Beginner-friendly",
     duration: "10 weeks",
@@ -464,7 +464,7 @@ export const PROGRAMS: readonly Program[] = [
     faqs: [
       {
         q: "Is this good for a complete beginner?",
-        a: "Yes — it's beginner-friendly. We start with foundations and build toward real SOC work. Basic computer literacy is all you need to begin.",
+        a: "Yes, it's beginner-friendly. We start with foundations and build toward real SOC work. Basic computer literacy is all you need to begin.",
       },
       {
         q: "Will this prepare me for Security+?",
@@ -479,7 +479,7 @@ export const PROGRAMS: readonly Program[] = [
     tag: "Cohort",
     desc: "A 16-week, end-to-end transformation from career-changer to hired engineer, with full job-search support.",
     tagline:
-      "Our most complete program: 16 weeks that take a motivated career-changer all the way to a signed offer — skills, portfolio, brand, and job search included.",
+      "Our most complete program: 16 weeks that take a motivated career-changer all the way to a signed offer, skills, portfolio, brand, and job search included.",
     format: "Cohort",
     level: "Beginner to job-ready",
     duration: "16 weeks",
@@ -562,7 +562,7 @@ export const PROGRAMS: readonly Program[] = [
     faqs: [
       {
         q: "I'm changing careers from outside tech. Is this for me?",
-        a: "Yes — this is exactly who it's built for. It starts from foundations and carries you all the way to a hired engineer, with mentorship the whole way.",
+        a: "Yes, this is exactly who it's built for. It starts from foundations and carries you all the way to a hired engineer, with mentorship the whole way.",
       },
       {
         q: "How much time will I need each week?",
@@ -581,7 +581,7 @@ export const PROGRAMS: readonly Program[] = [
     tag: "Self-paced",
     desc: "Master vSphere, vSAN, and NSX-T through guided labs, from datacenter ops to migration projects.",
     tagline:
-      "A self-paced, lab-driven deep dive into VMware infrastructure — from vSphere operations to enterprise migration, with mentor checkpoints along the way.",
+      "A self-paced, lab-driven deep dive into VMware infrastructure, from vSphere operations to enterprise migration, with mentor checkpoints along the way.",
     format: "Self-paced",
     level: "Intermediate",
     duration: "Self-paced · ~8 weeks",
@@ -651,7 +651,7 @@ export const PROGRAMS: readonly Program[] = [
     faqs: [
       {
         q: "Do I need my own lab hardware?",
-        a: "No — we provide a guided lab environment. If you want to build a home lab too, we'll point you to the most cost-effective setup.",
+        a: "No, we provide a guided lab environment. If you want to build a home lab too, we'll point you to the most cost-effective setup.",
       },
       {
         q: "Since it's self-paced, do I get any live support?",
@@ -736,7 +736,7 @@ export const PROGRAMS: readonly Program[] = [
     faqs: [
       {
         q: "Is this only for senior engineers?",
-        a: "No — it works for all levels. The sprint is tailored to your target role, whether that's your first engineering job or a senior position.",
+        a: "No, it works for all levels. The sprint is tailored to your target role, whether that's your first engineering job or a senior position.",
       },
       {
         q: "What if I have an interview coming up fast?",

@@ -38,15 +38,15 @@ const AUTO_REPLIES: Record<string, string> = {
   "What program is right for me?":
     "Great question! It depends on your goal. If you want full career transformation, our Premium program is the fit. If you mostly need interview prep, Interview Coaching might be enough. Want me to send you a 2-minute fit quiz?",
   "Can you review my resume?":
-    "Absolutely. You can upload it at /upload-resume for an instant AI scan — a senior mentor follows up with a human review within one business day.",
+    "Absolutely. You can upload it at /upload-resume for an instant AI scan, a senior mentor follows up with a human review within one business day.",
   "How fast can I land interviews?":
     "Most engineers in our accelerator see interviews within 30–45 days, and offers within 60–120 days. Big variable: your starting point and how targeted your applications are.",
   "Book a free consultation":
-    "Easy — head to /contact and pick a slot. The call is 30 minutes, no sales pitch. Want me to share what to prepare beforehand?",
+    "Easy, head to /contact and pick a slot. The call is 30 minutes, no sales pitch. Want me to share what to prepare beforehand?",
 };
 
 const FALLBACK_REPLY =
-  "Got it — a senior mentor will follow up here within a few minutes. In the meantime, would you like me to share a relevant playbook or book you a 30-min consult?";
+  "Got it, a senior mentor will follow up here within a few minutes. In the meantime, would you like me to share a relevant playbook or book you a 30-min consult?";
 
 function now() {
   return new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
