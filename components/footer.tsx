@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Github, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
+import { ArrowRight, Facebook, Github, Instagram, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
 import { Logo } from "./logo";
 import { useState } from "react";
 
@@ -95,6 +95,8 @@ export function Footer() {
                 { Icon: Github, href: "#", label: "GitHub" },
                 { Icon: Twitter, href: "#", label: "Twitter" },
                 { Icon: Youtube, href: "https://www.youtube.com/@boasystemz", label: "YouTube" },
+                { Icon: Facebook, href: "https://www.facebook.com/boasystemz", label: "Facebook" },
+                { Icon: Instagram, href: "https://www.instagram.com/boasystemz", label: "Instagram" },
               ].map(({ Icon, href, label }) => {
                 const isExternal = href.startsWith("http");
                 return (
