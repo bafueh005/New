@@ -90,16 +90,25 @@ export function Footer() {
             </p>
 
             <div className="mt-7 flex items-center gap-3">
-              {[Linkedin, Github, Twitter, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-100 hover:text-navy-900 dark:border-white/10 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              {[
+                { Icon: Linkedin, href: "#", label: "LinkedIn" },
+                { Icon: Github, href: "#", label: "GitHub" },
+                { Icon: Twitter, href: "#", label: "Twitter" },
+                { Icon: Youtube, href: "https://www.youtube.com/@boasystemz", label: "YouTube" },
+              ].map(({ Icon, href, label }) => {
+                const isExternal = href.startsWith("http");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-100 hover:text-navy-900 dark:border-white/10 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
