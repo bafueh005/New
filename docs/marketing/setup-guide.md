@@ -21,6 +21,9 @@ The code is built and **env-gated**: every integration is off until you set its 
 | `NEXT_PUBLIC_META_PIXEL_ID` | Meta (FB/IG) Pixel | | analytics |
 | `NEXT_PUBLIC_LINKEDIN_PARTNER_ID` | LinkedIn Insight Tag | | analytics |
 | `NEXT_PUBLIC_SITE_URL` | Canonical/base URL (defaults to boasystemz.com) | | SEO + email links |
+| `BOOKING_WEBHOOK_SECRET` | Auth for the confirmed-booking webhook | ✅ | `/api/webhooks/booking` |
+| `GA4_API_SECRET` | GA4 Measurement Protocol (server conversions) | ✅ | `lib/conversions.ts` |
+| `META_CAPI_TOKEN` | Meta Conversions API (server conversions) | ✅ | `lib/conversions.ts` |
 
 ## 1. HubSpot CRM
 1. Create a free HubSpot account.
@@ -56,7 +59,28 @@ The code is built and **env-gated**: every integration is off until you set its 
 - **LinkedIn Insight Tag:** LinkedIn Campaign Manager → Insight Tag → copy the Partner ID → `NEXT_PUBLIC_LINKEDIN_PARTNER_ID`.
 - **Vercel Analytics + Speed Insights:** on automatically once deployed to Vercel (enable Analytics in the Vercel dashboard).
 - Conversion events fire via `lib/analytics.ts`: `lead_submitted`, `whatsapp_click`, and `consultation_booked`. Set these as conversions in GA4 / Meta / LinkedIn to optimize ad spend.
-- **`consultation_booked` semantics:** it fires when a visitor who completed the contact form reaches the Microsoft Bookings scheduler (the embed in `components/booking-embed.tsx`). Microsoft Bookings runs in a cross-origin iframe and exposes no "confirmed" event to the page, so this is a high-intent proxy, not a guaranteed completed booking. For **confirmed**-booking counting, send a server-side conversion: create a Microsoft Bookings / Graph (or Power Automate) webhook on new appointments → call a small API route → forward to the GA4 Measurement Protocol and/or Meta Conversions API. The component also fires `consultation_confirmed` best-effort if Bookings ever posts a completion message.
+- **`consultation_booked` (client-side) semantics:** it fires when a visitor who completed the contact form reaches the Microsoft Bookings scheduler (`components/booking-embed.tsx`). Bookings is a cross-origin iframe with no "confirmed" event, so this is a high-intent proxy, not a guaranteed completed booking. For **confirmed** bookings, set up the server-side webhook below.
+
+## 5a. Confirmed-booking webhook (server-side conversions)
+
+`POST /api/webhooks/booking` reports a *real, completed* booking to GA4 + Meta and marks the lead booked in HubSpot. It's inert (401) until `BOOKING_WEBHOOK_SECRET` is set.
+
+1. **Set the secret:** `vercel env add BOOKING_WEBHOOK_SECRET production` → any long random string.
+2. **GA4 server conversions:** GA4 Admin → Data Streams → your stream → **Measurement Protocol API secrets** → create → `vercel env add GA4_API_SECRET production`. (Reuses `NEXT_PUBLIC_GA_ID` as the measurement ID.)
+3. **Meta server conversions:** Events Manager → your pixel → Settings → **Conversions API** → generate an access token → `vercel env add META_CAPI_TOKEN production`. (Reuses `NEXT_PUBLIC_META_PIXEL_ID`.)
+4. **HubSpot:** create a `consultation_booked` contact property (single checkbox or single-line text) so the route can flag booked leads.
+5. **Wire the trigger (pick one):**
+   - **Power Automate (recommended, no code):** new flow → trigger *"When an appointment is created"* (Microsoft Bookings connector) → action *HTTP* → `POST https://boasystemz.com/api/webhooks/booking`, header `x-webhook-secret: <BOOKING_WEBHOOK_SECRET>`, JSON body:
+     ```json
+     { "email": "@{triggerOutputs()?['body/customerEmailAddress']}",
+       "name": "@{triggerOutputs()?['body/customerName']}",
+       "eventId": "@{triggerOutputs()?['body/id']}",
+       "value": 0, "currency": "USD" }
+     ```
+   - **Microsoft Graph subscription:** subscribe to `bookingBusinesses/{id}/appointments` with `notificationUrl` = the route and `clientState` = `BOOKING_WEBHOOK_SECRET`. The route auto-handles the `validationToken` handshake. (Graph notifications don't include rich appointment data without encryption — Power Automate is simpler.)
+6. **Test:** book a real appointment; confirm a `consultation_booked` (trigger=confirmed) event in GA4 Realtime / DebugView and a "Schedule" event in Meta Events Manager → Test Events. Mark it as a conversion in each ad platform.
+
+> The client-side `consultation_booked` (scheduler-opened) and this server-side `consultation_booked` (confirmed) are distinct trigger values — keep both, or use only the confirmed one as your optimization conversion.
 
 ## 6. SEO (verify after deploy)
 - `https://boasystemz.com/sitemap.xml` and `/robots.txt` resolve.

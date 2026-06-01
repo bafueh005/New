@@ -19,6 +19,7 @@ An end-to-end lead-generation + content system: a website lead funnel, HubSpot C
 | Lead capture API | `app/api/lead/route.ts` |
 | Lead magnet UI | `components/lead-capture.tsx`, `app/resources/it-career-toolkit/` |
 | Nurture cron | `app/api/cron/nurture/route.ts`, `vercel.json` |
+| Confirmed-booking webhook | `app/api/webhooks/booking/route.ts`, `lib/conversions.ts` |
 | WhatsApp button | `components/whatsapp-button.tsx` |
 | Analytics + pixels | `components/analytics.tsx`, `lib/analytics.ts` |
 | SEO | `app/sitemap.ts`, `app/robots.ts`, `components/json-ld.tsx` |
