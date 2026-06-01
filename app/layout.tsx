@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LiveChat } from "@/components/live-chat";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://boasystemz.com"),
@@ -66,6 +67,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <LiveChat />
+          <WhatsAppButton />
         </Providers>
       </body>
     </html>

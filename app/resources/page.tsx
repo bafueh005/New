@@ -12,6 +12,7 @@ import {
   BrainCircuit,
 } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
+import { LeadCapture } from "@/components/lead-capture";
 
 export const metadata: Metadata = {
   title: "Resources: Career Roadmaps, Interview Libraries, AI Resume Review",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 
 const RESOURCES = [
   { icon: BrainCircuit, title: "AI Resume Review", desc: "Get an instant ATS score, keyword gaps, and rewrite suggestions in 60 seconds.", href: "/resources/ai-resume-review", tag: "Tool", featured: true },
+  { icon: FileText, title: "The IT Career Toolkit", desc: "Resume template, the 40 interview questions hiring managers ask, and a 90-day plan. Free.", href: "/resources/it-career-toolkit", tag: "Download" },
   { icon: Mic, title: "Technical Interview Library", desc: "300+ real interview questions across cloud, infra, network, and security.", href: "/resources#interviews", tag: "Library" },
   { icon: Cloud, title: "Cloud Engineer Roadmap", desc: "From zero to Sr. Cloud Engineer, skills, certs, projects, by quarter.", href: "/resources#cloud", tag: "Roadmap" },
   { icon: Server, title: "Systems / VMware Roadmap", desc: "Sysadmin to infrastructure engineer, labs, certs, and the gaps to fill.", href: "/resources#vmware", tag: "Roadmap" },
@@ -99,6 +101,16 @@ export default function ResourcesPage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <LeadCapture
+              magnet="it-career-toolkit"
+              source="resources-index"
+              heading="Want all of it in one download?"
+              subcopy="Get the full IT Career Toolkit — resume template, the 40-question interview bank, and the 90-day applying-to-offer plan — sent to your inbox."
+              cta="Email me the toolkit"
+            />
           </div>
         </div>
       </section>
