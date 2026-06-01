@@ -5,6 +5,8 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LiveChat } from "@/components/live-chat";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { Analytics } from "@/components/analytics";
+import { JsonLd, organizationSchema, websiteSchema } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://boasystemz.com"),
@@ -59,6 +61,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
+      </head>
       <body className="min-h-screen antialiased selection:bg-cyan-400/30 selection:text-navy-950 dark:selection:text-white">
         <Providers>
           <div className="flex min-h-screen flex-col">
@@ -69,6 +75,7 @@ export default function RootLayout({
           <LiveChat />
           <WhatsAppButton />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

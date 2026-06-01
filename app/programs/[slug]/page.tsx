@@ -16,6 +16,7 @@ import { PageHeader } from "@/components/page-header";
 import { CtaSection } from "@/components/cta-section";
 import { Curriculum, Faq } from "@/components/program-sections";
 import { PROGRAMS, getProgramBySlug, totalLessons } from "@/lib/programs-data";
+import { JsonLd, serviceSchema, faqSchema } from "@/components/json-ld";
 
 export function generateStaticParams() {
   return PROGRAMS.map((p) => ({ slug: p.slug }));
@@ -27,6 +28,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: program.title,
     description: program.desc,
+    alternates: { canonical: `/programs/${program.slug}` },
+    openGraph: {
+      title: program.title,
+      description: program.desc,
+      url: `/programs/${program.slug}`,
+    },
   };
 }
 
@@ -47,6 +54,8 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
 
   return (
     <>
+      <JsonLd data={serviceSchema({ title: program.title, description: program.desc, path: `/programs/${program.slug}` })} />
+      {program.faqs?.length ? <JsonLd data={faqSchema(program.faqs)} /> : null}
       <PageHeader eyebrow={`${program.tag} program`} title={<>{program.title}</>} description={program.tagline}>
         <div className="space-y-6">
           <div className="flex flex-wrap gap-2.5">
