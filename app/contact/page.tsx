@@ -13,6 +13,7 @@ import {
   Upload,
   CheckCircle2,
   ArrowRight,
+  Video,
 } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { PROGRAMS, getProgramBySlug } from "@/lib/programs-data";
@@ -27,7 +28,10 @@ const GENERIC_OPTIONS = [
 ];
 const BASE_OPTIONS = [...PROGRAMS.map((p) => p.title), ...GENERIC_OPTIONS];
 
-const TIME_SLOTS = ["9:00 AM", "10:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:30 PM"];
+// Microsoft Bookings public page URL. When the Bookings service has "Add online
+// meeting" enabled, every booking auto-generates a Teams meeting link and sends
+// calendar invites to both the client and the mentor. Set this in Vercel env.
+const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
 export default function ContactPage() {
   return (
@@ -54,7 +58,6 @@ function ContactContent() {
   const defaultProgram = preselected ?? "Not sure yet";
 
   const [submitted, setSubmitted] = useState(false);
-  const [slot, setSlot] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -70,7 +73,7 @@ function ContactContent() {
       currentRole: String(data.get("currentRole") ?? ""),
       targetRole: String(data.get("targetRole") ?? ""),
       program: String(data.get("program") ?? ""),
-      slot: slot ?? "",
+      slot: "",
       message: String(data.get("message") ?? ""),
       uploadResume: data.get("resume") === "on",
     };
@@ -124,16 +127,43 @@ function ContactContent() {
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="grid place-items-center py-16 text-center"
+                className={BOOKING_URL ? "" : "grid place-items-center py-16 text-center"}
               >
-                <span className="grid h-14 w-14 place-items-center rounded-full bg-emerald-500/15 text-emerald-500">
-                  <CheckCircle2 className="h-7 w-7" />
-                </span>
-                <h2 className="mt-5 text-2xl font-semibold text-navy-950 dark:text-white">Got it. We&apos;re on it.</h2>
-                <p className="mt-2 max-w-sm text-sm text-slate-600 dark:text-slate-300">
-                  A senior mentor will reach out within one business day to confirm your session and share a short prep questionnaire.
-                </p>
-                <Link href="/" className="btn-secondary mt-6">Back to home</Link>
+                {BOOKING_URL ? (
+                  <>
+                    <div className="flex items-start gap-3">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-emerald-500/15 text-emerald-500">
+                        <CheckCircle2 className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <h2 className="text-xl font-semibold text-navy-950 dark:text-white">Got it. One last step.</h2>
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                          Pick a time below. A Microsoft Teams meeting link is generated and emailed to you the moment you confirm, along with a calendar invite.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10">
+                      <iframe
+                        title="Book your consultation"
+                        src={BOOKING_URL}
+                        className="h-[760px] w-full"
+                        style={{ border: 0 }}
+                      />
+                    </div>
+                    <Link href="/" className="btn-secondary mt-5">Back to home</Link>
+                  </>
+                ) : (
+                  <>
+                    <span className="grid h-14 w-14 place-items-center rounded-full bg-emerald-500/15 text-emerald-500">
+                      <CheckCircle2 className="h-7 w-7" />
+                    </span>
+                    <h2 className="mt-5 text-2xl font-semibold text-navy-950 dark:text-white">Got it. We&apos;re on it.</h2>
+                    <p className="mt-2 max-w-sm text-sm text-slate-600 dark:text-slate-300">
+                      A senior mentor will reach out within one business day to confirm your session and share a short prep questionnaire.
+                    </p>
+                    <Link href="/" className="btn-secondary mt-6">Back to home</Link>
+                  </>
+                )}
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="grid gap-5">
@@ -172,29 +202,18 @@ function ContactContent() {
                   </select>
                 </Field>
 
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                    Preferred time (next available)
-                  </label>
-                  <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-6">
-                    {TIME_SLOTS.map((t) => (
-                      <button
-                        type="button"
-                        key={t}
-                        onClick={() => setSlot(t)}
-                        className={`rounded-lg border px-2 py-2 text-xs font-medium transition-colors ${
-                          slot === t
-                            ? "border-cyan-400 bg-cyan-400/10 text-cyan-700 dark:text-cyan-200"
-                            : "border-slate-200 text-slate-700 hover:border-cyan-400/50 dark:border-white/10 dark:text-slate-300"
-                        }`}
-                      >
-                        {t}
-                      </button>
-                    ))}
+                <div className="rounded-xl border border-cyan-400/30 bg-cyan-400/5 px-4 py-3.5">
+                  <div className="flex items-start gap-2.5">
+                    <Video className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500" />
+                    <div>
+                      <p className="text-sm font-medium text-navy-900 dark:text-white">
+                        Pick your time on the next step
+                      </p>
+                      <p className="mt-0.5 text-[13px] text-slate-600 dark:text-slate-300">
+                        After you submit, you&apos;ll choose a slot in your timezone and a Microsoft Teams meeting link is generated and emailed to you automatically.
+                      </p>
+                    </div>
                   </div>
-                  <p className="mt-1.5 text-[11px] text-slate-500 dark:text-slate-400">
-                    Calendly will confirm the exact slot in your timezone after submission.
-                  </p>
                 </div>
 
                 <Field label="What would you like to focus on?">
@@ -213,7 +232,7 @@ function ContactContent() {
                 )}
 
                 <button type="submit" disabled={submitting} className="btn-primary mt-2 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
-                  {submitting ? "Sending…" : <>Submit and schedule <ArrowRight className="h-4 w-4" /></>}
+                  {submitting ? "Sending…" : <>Continue to booking <ArrowRight className="h-4 w-4" /></>}
                 </button>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">
                   By submitting you agree to our <Link href="/legal/privacy" className="underline">privacy policy</Link> and to receive a follow-up email from a Boasystemz mentor.
