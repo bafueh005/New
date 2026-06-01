@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, Tag, Share2, BookmarkPlus } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog";
 import { CtaSection } from "@/components/cta-section";
+import { JsonLd, articleSchema } from "@/components/json-ld";
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
@@ -12,7 +13,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
   if (!post) return { title: "Article" };
-  return { title: post.title, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `/blog/${post.slug}`,
+      type: "article",
+    },
+  };
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -23,6 +34,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <JsonLd data={articleSchema(post)} />
       <article className="relative">
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] bg-hero-glow opacity-50" />
 

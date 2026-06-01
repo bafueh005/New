@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
+import { LeadCapture } from "@/components/lead-capture";
 import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -76,6 +77,16 @@ export default function BlogPage() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <LeadCapture
+              magnet="it-career-toolkit"
+              source="blog-index"
+              heading="Get the IT Career Toolkit"
+              subcopy="Like these playbooks? Get the full toolkit — resume template, interview question bank, and 90-day plan — free in your inbox."
+              cta="Send it to me"
+            />
           </div>
         </div>
       </section>

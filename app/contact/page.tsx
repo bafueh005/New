@@ -16,6 +16,7 @@ import {
   Video,
 } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
+import { BookingEmbed } from "@/components/booking-embed";
 import { PROGRAMS, getProgramBySlug } from "@/lib/programs-data";
 import { getServiceBySlug } from "@/lib/services-data";
 
@@ -142,14 +143,7 @@ function ContactContent() {
                         </p>
                       </div>
                     </div>
-                    <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10">
-                      <iframe
-                        title="Book your consultation"
-                        src={BOOKING_URL}
-                        className="h-[760px] w-full"
-                        style={{ border: 0 }}
-                      />
-                    </div>
+                    <BookingEmbed url={BOOKING_URL} />
                     <Link href="/" className="btn-secondary mt-5">Back to home</Link>
                   </>
                 ) : (

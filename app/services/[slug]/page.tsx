@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, CalendarCheck2, CheckCircle2, Upload } from "luc
 import { PageHeader } from "@/components/page-header";
 import { CtaSection } from "@/components/cta-section";
 import { SERVICES, getServiceBySlug } from "@/lib/services-data";
+import { JsonLd, serviceSchema } from "@/components/json-ld";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -16,6 +17,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: service.title,
     description: service.desc,
+    alternates: { canonical: `/services/${service.slug}` },
+    openGraph: {
+      title: service.title,
+      description: service.desc,
+      url: `/services/${service.slug}`,
+    },
   };
 }
 
@@ -28,6 +35,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
   return (
     <>
+      <JsonLd data={serviceSchema({ title: service.title, description: service.desc, path: `/services/${service.slug}` })} />
       <PageHeader
         eyebrow={service.tag}
         title={<>{service.title}</>}

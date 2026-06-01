@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { createLead } from "@/lib/leads";
+import { welcomeEmail } from "@/lib/email/templates";
 
-const RECIPIENT = process.env.CONTACT_RECIPIENT ?? "info@boasystemz.com";
-const FROM = process.env.CONTACT_FROM ?? "Boasystemz <onboarding@resend.dev>";
+const RECIPIENT = process.env.CONTACT_RECIPIENT || "info@boasystemz.com";
+const FROM = process.env.CONTACT_FROM || "Boasystemz <onboarding@resend.dev>";
 
 type ContactPayload = {
   name?: string;
@@ -22,6 +24,58 @@ function escapeHtml(value: string) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function renderSlackBlocks(payload: Required<ContactPayload>) {
+  const fields = [
+    ["Email", payload.email],
+    ["Program", payload.program || "—"],
+    ["Current role", payload.currentRole || "—"],
+    ["Target role", payload.targetRole || "—"],
+    ["Preferred time", payload.slot || "—"],
+    ["Will upload resume", payload.uploadResume ? "Yes" : "No"],
+  ];
+  return {
+    text: `New contact: ${payload.name}`,
+    blocks: [
+      {
+        type: "header",
+        text: { type: "plain_text", text: `New contact: ${payload.name}` },
+      },
+      {
+        type: "section",
+        fields: fields.map(([label, value]) => ({
+          type: "mrkdwn",
+          text: `*${label}*\n${value}`,
+        })),
+      },
+      ...(payload.message
+        ? [
+            {
+              type: "section",
+              text: { type: "mrkdwn", text: `*Message*\n${payload.message}` },
+            },
+          ]
+        : []),
+    ],
+  };
+}
+
+async function sendSlack(payload: Required<ContactPayload>) {
+  const webhook = process.env.SLACK_WEBHOOK_URL;
+  if (!webhook) return;
+  try {
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(renderSlackBlocks(payload)),
+    });
+    if (!res.ok) {
+      console.error("Slack webhook failed", res.status, await res.text());
+    }
+  } catch (err) {
+    console.error("Slack webhook threw", err);
+  }
 }
 
 function renderHtml(payload: Required<ContactPayload>) {
@@ -83,16 +137,34 @@ export async function POST(request: Request) {
   };
 
   const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
-    from: FROM,
-    to: RECIPIENT,
-    replyTo: email,
-    subject: `New contact: ${name}${payload.program ? ` — ${payload.program}` : ""}`,
-    html: renderHtml(payload),
-  });
+  const [emailResult] = await Promise.all([
+    // Rich, contact-specific notification to the team (keeps the detailed table).
+    resend.emails.send({
+      from: FROM,
+      to: RECIPIENT,
+      replyTo: email,
+      subject: `New contact: ${name}${payload.program ? ` — ${payload.program}` : ""}`,
+      html: renderHtml(payload),
+    }),
+    sendSlack(payload),
+    // Push the lead into the CRM and send the visitor a welcome autoresponder.
+    // notifyTeam:false because the detailed email above already covers the team.
+    createLead({
+      email,
+      firstName: name.split(" ")[0],
+      lastName: name.split(" ").slice(1).join(" ") || undefined,
+      source: "contact-form",
+      autoresponder: welcomeEmail(name.split(" ")[0]),
+      notifyTeam: false,
+      hubspotProperties: {
+        ...(payload.program ? { program_interest: payload.program } : {}),
+        ...(payload.currentRole ? { jobtitle: payload.currentRole } : {}),
+      },
+    }),
+  ]);
 
-  if (error) {
-    console.error("Resend error", error);
+  if (emailResult.error) {
+    console.error("Resend error", emailResult.error);
     return NextResponse.json(
       { error: "Failed to send email." },
       { status: 502 },

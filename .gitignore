@@ -7,3 +7,6 @@ dist
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# AI-generated content drafts (review, then publish — not source)
+content/drafts
