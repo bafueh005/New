@@ -55,7 +55,8 @@ The code is built and **env-gated**: every integration is off until you set its 
 - **Meta Pixel:** Meta Events Manager → create a pixel → copy the ID → `NEXT_PUBLIC_META_PIXEL_ID`. (One pixel covers Facebook + Instagram ads.)
 - **LinkedIn Insight Tag:** LinkedIn Campaign Manager → Insight Tag → copy the Partner ID → `NEXT_PUBLIC_LINKEDIN_PARTNER_ID`.
 - **Vercel Analytics + Speed Insights:** on automatically once deployed to Vercel (enable Analytics in the Vercel dashboard).
-- Conversion events already fire via `lib/analytics.ts`: `lead_submitted`, `whatsapp_click` (and `consultation_booked` is available to wire to the Bookings confirmation). Set these as conversions in GA4 / Meta / LinkedIn to optimize ad spend.
+- Conversion events fire via `lib/analytics.ts`: `lead_submitted`, `whatsapp_click`, and `consultation_booked`. Set these as conversions in GA4 / Meta / LinkedIn to optimize ad spend.
+- **`consultation_booked` semantics:** it fires when a visitor who completed the contact form reaches the Microsoft Bookings scheduler (the embed in `components/booking-embed.tsx`). Microsoft Bookings runs in a cross-origin iframe and exposes no "confirmed" event to the page, so this is a high-intent proxy, not a guaranteed completed booking. For **confirmed**-booking counting, send a server-side conversion: create a Microsoft Bookings / Graph (or Power Automate) webhook on new appointments → call a small API route → forward to the GA4 Measurement Protocol and/or Meta Conversions API. The component also fires `consultation_confirmed` best-effort if Bookings ever posts a completion message.
 
 ## 6. SEO (verify after deploy)
 - `https://boasystemz.com/sitemap.xml` and `/robots.txt` resolve.
