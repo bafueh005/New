@@ -2,6 +2,15 @@
 
 A premium, enterprise-grade marketing + SaaS-mockup website for **Boasystemz** (boasystemz.com), an IT consulting and career acceleration company. Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and Framer Motion.
 
+## Documentation
+
+Full engineering docs live in the **[project wiki](https://github.com/bafueh005/New/wiki)**:
+
+- [Architecture](https://github.com/bafueh005/New/wiki/Architecture) — system design, data flow, request lifecycles
+- [Project Structure](https://github.com/bafueh005/New/wiki/Project-Structure) · [Getting Started](https://github.com/bafueh005/New/wiki/Getting-Started)
+- [Environment Variables](https://github.com/bafueh005/New/wiki/Environment-Variables) · [API Reference](https://github.com/bafueh005/New/wiki/API-Reference)
+- [Marketing System](https://github.com/bafueh005/New/wiki/Marketing-System) · [Deployment](https://github.com/bafueh005/New/wiki/Deployment)
+
 ## Quick start
 
 ```bash
