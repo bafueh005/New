@@ -84,20 +84,28 @@ export async function POST(request: Request) {
   const currency = String(body.currency ?? "USD");
   const eventId = String(body.eventId ?? body.appointmentId ?? body.id ?? crypto.randomUUID());
 
-  const conversion = { email: email || undefined, eventId, value, currency };
+  // Only a shaped booking payload (Power Automate sends `email`) represents a
+  // real confirmed booking. A bare Microsoft Graph change-notification envelope
+  // (`{ value: [{ clientState, ... }] }`) carries no booking data and fires for
+  // any change — including cancellations and reschedules. Firing a conversion
+  // on those would log phantom `consultation_booked` events with no user data
+  // and value 0, polluting GA4/Meta. Acknowledge and no-op instead.
+  if (!email) {
+    return NextResponse.json({ ok: true, skipped: "no booking payload" });
+  }
+
+  const conversion = { email, eventId, value, currency };
 
   const [ga4, meta] = await Promise.all([
     sendGA4Conversion(conversion),
     sendMetaConversion(conversion),
     // Mark the lead as booked in the CRM (best-effort; create the
     // `consultation_booked` boolean/text property in HubSpot first).
-    email
-      ? upsertContact({
-          email,
-          firstname: name ? name.split(" ")[0] : undefined,
-          properties: { consultation_booked: "true", hs_lead_status: "CONNECTED" },
-        })
-      : Promise.resolve(null),
+    upsertContact({
+      email,
+      firstname: name ? name.split(" ")[0] : undefined,
+      properties: { consultation_booked: "true", hs_lead_status: "CONNECTED" },
+    }),
   ]);
 
   return NextResponse.json({ ok: true, ga4, meta });
