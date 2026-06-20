@@ -10,7 +10,8 @@
     "content:generate": "tsx scripts/generate-content.ts",
     "fb:cover": "tsx scripts/publish-fb-cover.ts",
     "fb:profile": "tsx scripts/publish-fb-profile.ts",
-    "fb:token": "tsx scripts/fb-longlived-token.ts"
+    "fb:token": "tsx scripts/fb-longlived-token.ts",
+    "fb:page-info": "tsx scripts/publish-fb-page-info.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",
