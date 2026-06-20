@@ -18,15 +18,30 @@ export function spotlightIndexFor(date: Date = new Date()): number {
   return ((slot % n) + n) % n;
 }
 
-/** Build the post text + link for a service, matching the manual spotlight style. */
+/** Remove dashes from prose: split hyphenated words, turn em/en dashes into commas. */
+function dashFree(s: string): string {
+  return s
+    .replace(/(\w)[—–-](\w)/g, "$1 $2") // intra-word hyphen/em/en dash -> space
+    .replace(/\s*[—–]\s*/g, ", ") // remaining em/en dash -> comma
+    .replace(/\s+-\s+/g, ", ") // " - " separator -> comma
+    .replace(/-/g, " ") // any leftover hyphen -> space
+    .replace(/ {2,}/g, " "); // collapse double spaces
+}
+
+/**
+ * Build the post text + link for a service, matching the manual spotlight style.
+ * The visible text is dash-free; the clickable link attachment still uses the
+ * real (hyphenated) service URL so it resolves correctly.
+ */
 export function buildSpotlightPost(service: Service): { message: string; link: string } {
-  const bullets = service.bullets.map((b) => `✅ ${b}`).join("\n");
+  const bullets = service.bullets.map((b) => `✅ ${dashFree(b)}`).join("\n");
   const link = `${SITE_URL}/services/${service.slug}`;
+  const domain = SITE_URL.replace(/^https?:\/\//, ""); // bare domain, no hyphenated path
   const message =
-    `🔦 Service Spotlight: ${service.title}\n\n` +
-    `${service.desc}\n\n` +
+    `🔦 Service Spotlight: ${dashFree(service.title)}\n\n` +
+    `${dashFree(service.desc)}\n\n` +
     `What you get:\n${bullets}\n\n` +
-    `👉 Learn more: ${link}\n` +
+    `👉 Learn more: ${domain}\n` +
     `📩 info@boasystemz.com`;
   return { message, link };
 }
