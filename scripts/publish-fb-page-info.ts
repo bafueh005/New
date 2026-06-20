@@ -23,9 +23,10 @@
 
 // Single source of truth — mirrors components/json-ld.tsx + the site footer.
 const PAGE_INFO: Record<string, string> = {
-  about: "Career acceleration for IT professionals — land interviews & offers faster.",
+  about:
+    "Career acceleration for IT professionals — land interviews and offers faster through resume optimization, senior-engineer mentorship, and real interview prep.",
   description:
-    "Boasystemz helps IT professionals land interviews and offers through resume optimization, interview coaching, and senior-engineer mentorship. Personalized 1:1 and small-cohort programs in cloud, DevOps, cybersecurity, systems, and infrastructure engineering.",
+    "Boasystemz helps IT professionals stop endlessly applying and start landing interviews and offers. Our mentors run production systems at Fortune 500 companies — every engagement is 1:1 or small-cohort, and we track real outcomes: callbacks, interviews, offers, and time-to-offer. We offer resume optimization, LinkedIn branding, cloud / DevOps / cybersecurity / infrastructure mentorship, technical mock interviews, and a Premium Career Transformation with an offer guarantee for qualifying engineers. We don't teach you to apply to 500 jobs — we teach you to win the 20 that matter.",
   website: "https://boasystemz.com",
   phone: "+1 240-784-3133",
   emails: JSON.stringify(["info@boasystemz.com"]),
