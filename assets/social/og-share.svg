@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Boasystemz Open Graph share image — 1200x630 (FB/LinkedIn/Twitter link preview). Centered, crop-safe. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1730"/>
+      <stop offset="0.5" stop-color="#122348"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0" r="0.8">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="0.7" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1730"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#22d3ee" fill-opacity="0.15"/>
+    </pattern>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#060c1c" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="1050" cy="110" r="170" fill="#22d3ee" fill-opacity="0.10"/>
+  <circle cx="150" cy="560" r="140" fill="#06b6d4" fill-opacity="0.10"/>
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <!-- Logo: mark + wordmark, centered -->
+  <g>
+    <rect x="448" y="92" width="60" height="60" rx="15" fill="url(#mark)" stroke="#ffffff" stroke-opacity="0.10"/>
+    <g transform="translate(463,107)" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M4 7l8-4 8 4-8 4-8-4z"/>
+      <path d="M4 12l8 4 8-4"/>
+      <path d="M4 17l8 4 8-4"/>
+    </g>
+    <text x="524" y="136" font-family="Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.5">
+      <tspan fill="#ffffff">Boa</tspan><tspan fill="#22d3ee">systemz</tspan>
+    </text>
+  </g>
+
+  <!-- Headline -->
+  <text x="600" y="300" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#ffffff">
+    Land IT Interviews &amp; Offers
+  </text>
+  <text x="600" y="378" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-1.5">
+    <tspan fill="#ffffff">— </tspan><tspan fill="#22d3ee">Faster.</tspan>
+  </text>
+
+  <!-- Subline -->
+  <text x="600" y="438" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="500" fill="#aabfe5">
+    Resume optimization  ·  Cloud &amp; infrastructure mentorship  ·  Real interview prep
+  </text>
+
+  <!-- Divider + URL -->
+  <rect x="510" y="498" width="180" height="2" rx="1" fill="#22d3ee" fill-opacity="0.4"/>
+  <text x="600" y="552" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#67e8f9">
+    BOASYSTEMZ.COM
+  </text>
+</svg>
