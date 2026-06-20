@@ -37,12 +37,21 @@ export const metadata: Metadata = {
     siteName: "Boasystemz",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Boasystemz — Land IT Interviews & Offers Faster",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Boasystemz: Career Acceleration for IT Professionals",
     description:
       "Stop applying to hundreds of jobs without hearing back. Land interviews and offers faster with Boasystemz.",
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };
