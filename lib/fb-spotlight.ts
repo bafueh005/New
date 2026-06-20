@@ -19,7 +19,7 @@ export function spotlightIndexFor(date: Date = new Date()): number {
 }
 
 /** Remove dashes from prose: split hyphenated words, turn em/en dashes into commas. */
-function dashFree(s: string): string {
+export function dashFree(s: string): string {
   return s
     .replace(/(\w)[—–-](\w)/g, "$1 $2") // intra-word hyphen/em/en dash -> space
     .replace(/\s*[—–]\s*/g, ", ") // remaining em/en dash -> comma
