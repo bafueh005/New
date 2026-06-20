@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Boasystemz Facebook cover — 1640 x 624 (2x of 820x312 desktop). Center-safe for mobile crop. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="624" viewBox="0 0 1640 624" fill="none">
+  <defs>
+    <!-- Premium brand gradient (matches tailwind premium-gradient, 135deg) -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1640" y2="624" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1730"/>
+      <stop offset="0.5" stop-color="#122348"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+
+    <!-- Top hero glow -->
+    <radialGradient id="glow" cx="0.5" cy="0" r="0.75">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="0.7" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Logo mark gradient (navy-900 -> cyan-500) -->
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1730"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <!-- Cyan dot grid -->
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#22d3ee" fill-opacity="0.16"/>
+    </pattern>
+
+    <!-- Soft vignette for depth -->
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#060c1c" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background layers -->
+  <rect width="1640" height="624" fill="url(#bg)"/>
+  <rect width="1640" height="624" fill="url(#dots)"/>
+  <rect width="1640" height="624" fill="url(#glow)"/>
+
+  <!-- Floating accent orbs -->
+  <circle cx="1430" cy="120" r="190" fill="#22d3ee" fill-opacity="0.10"/>
+  <circle cx="180" cy="540" r="150" fill="#06b6d4" fill-opacity="0.10"/>
+
+  <rect width="1640" height="624" fill="url(#vignette)"/>
+
+  <!-- ===== Centered content (mobile-safe) ===== -->
+
+  <!-- Logo: mark + wordmark, centered as a group around x=820 -->
+  <g>
+    <!-- mark -->
+    <rect x="640" y="78" width="64" height="64" rx="16" fill="url(#mark)" stroke="#ffffff" stroke-opacity="0.10"/>
+    <g transform="translate(656,94)" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M4 7l8-4 8 4-8 4-8-4z"/>
+      <path d="M4 12l8 4 8-4"/>
+      <path d="M4 17l8 4 8-4"/>
+    </g>
+    <!-- wordmark -->
+    <text x="722" y="124" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="-0.5">
+      <tspan fill="#ffffff">Boa</tspan><tspan fill="#22d3ee">systemz</tspan>
+    </text>
+  </g>
+
+  <!-- Headline -->
+  <text x="820" y="288" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-1.5" fill="#ffffff">
+    Land IT Interviews &amp; Offers
+  </text>
+  <text x="820" y="372" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-1.5">
+    <tspan fill="#ffffff">— </tspan><tspan fill="#22d3ee">Faster.</tspan>
+  </text>
+
+  <!-- Subline -->
+  <text x="820" y="430" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="27" font-weight="500" fill="#aabfe5">
+    Resume optimization  ·  Cloud &amp; infrastructure mentorship  ·  Real interview prep
+  </text>
+
+  <!-- Stat chips (centered row around x=820) -->
+  <g font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="600">
+    <!-- chip 1 -->
+    <rect x="305" y="476" width="386" height="52" rx="26" fill="#ffffff" fill-opacity="0.07" stroke="#22d3ee" stroke-opacity="0.35"/>
+    <circle cx="327" cy="502" r="5" fill="#22d3ee"/>
+    <text x="345" y="510" fill="#eef3fb">200+ Career Transformations</text>
+
+    <!-- chip 2 -->
+    <rect x="717" y="476" width="338" height="52" rx="26" fill="#ffffff" fill-opacity="0.07" stroke="#22d3ee" stroke-opacity="0.35"/>
+    <circle cx="739" cy="502" r="5" fill="#22d3ee"/>
+    <text x="757" y="510" fill="#eef3fb">Senior-engineer mentors</text>
+
+    <!-- chip 3 -->
+    <rect x="1081" y="476" width="254" height="52" rx="26" fill="#ffffff" fill-opacity="0.07" stroke="#22d3ee" stroke-opacity="0.35"/>
+    <circle cx="1103" cy="502" r="5" fill="#22d3ee"/>
+    <text x="1121" y="510" fill="#eef3fb">Offer guarantee*</text>
+  </g>
+
+  <!-- Website URL -->
+  <text x="820" y="588" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#67e8f9">
+    BOASYSTEMZ.COM
+  </text>
+</svg>
